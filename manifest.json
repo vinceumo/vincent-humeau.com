@@ -43,8 +43,10 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
-  "background_color": "#4c5c8b",
-  "display": "standalone",
-  "theme_color": "#4c5c8b"
+  "theme_color": "#3494e6",
+  "background_color": "#2c303a",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
 }
