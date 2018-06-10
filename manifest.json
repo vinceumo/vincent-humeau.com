@@ -1,6 +1,7 @@
 {
   "name": "Vincent Humeau (Vidal) - Front End Developer",
-  "short_name": "vh",
+  "short_name": "vincent humeau",
+  "lang": "en-GB",
   "icons": [
     {
         "src": "dist/img/android-chrome-192x192.png",
