@@ -18,6 +18,6 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/vincent-humeau.com/",
-  "start_url": "/vincent-humeau.com/"
+  "scope": "/",
+  "start_url": "/"
 }
