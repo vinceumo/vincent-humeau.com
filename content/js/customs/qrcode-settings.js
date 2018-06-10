@@ -15,7 +15,7 @@
             padding: 4,
             width: 250,
             height: 250,
-            color: "#000000",
+            color: "#384059",
             background: "#ffffff",
             ecl: "M"
         });
