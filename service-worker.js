@@ -96,8 +96,6 @@ self.addEventListener('fetch', function(e) {
 					.catch(function(err) {
 						console.log('[ServiceWorker] Error Fetching & Caching New Data', err);
 					});
-
-
 			}) // end caches.match(e.request)
 	); // end e.respondWith
 });
