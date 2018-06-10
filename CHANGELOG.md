@@ -2,64 +2,6 @@
 
 http://keepachangelog.com/en/1.0.0/
 
-## [1.0.1] - 2018-03-03
+## [1.0.0] - 2018-06-10
 
-### Added
-
-* Added starter index.html
-* Placeholder favicons
-* Manifest.json
-* Atomic Bulldog kss theme
-
-### Changed
-* File structure and names
-
-## [1.0.0] - 2018-02-21
-
-Initial release of Atomic Bulldog
-
-### Added
-
-* Node KSS
-* Sass boilerplate
-  * Atoms
-    * Form elements
-    * Modifiers
-    * Typography
-    * Images
-    * Buttons
-    * Focus
-  * Functions
-    * em
-    * map-deep-get
-  * Layout
-    * Container sizes
-    * Grid
-    * Fallback grid
-  * mixins
-    * media-queries
-  * molecules
-    * form
-    * navigation
-    * skip-navigation
-  * Organisms
-    * Form
-    * navigation bar
-  * Theme
-    * Inverted
-  * Variables
-    * Aspect ratio
-    * Breakpoints
-    * Colors
-    * Container sizes
-    * Font families
-    * Font sizes
-    * Grid
-    * Root classes
-    * Spacers
-    * Z-index
-  * Vendors
-    * A11y
-    * icomoon
-    * family.scss
-    * bootstrap-reboot
+* Start project
