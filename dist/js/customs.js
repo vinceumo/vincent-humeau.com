@@ -1,0 +1,3 @@
+!function(){function t(t,e){var n=new QRCode({content:e,padding:4,width:250,height:250,color:"#000000",background:"#ffffff",ecl:"M"}),o=n.svg();t.innerHTML=o}document.addEventListener("DOMContentLoaded",function(e){var n=document.querySelectorAll(".qrcode");Array.prototype.forEach.call(n,function(e,o){var r=n[o],c=r.getAttribute("data-qrcode-text");t(r,c)})})}();
+"serviceWorker"in navigator&&navigator.serviceWorker.register("service-worker.js").then(function(){})["catch"](function(){});
+//# sourceMappingURL=maps/customs.js.map

@@ -6,9 +6,12 @@ var cleanCSS = require('gulp-clean-css');
 var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 var purgeSourcemaps = require('gulp-purge-sourcemaps');
+var bundle = require('gulp-bundle-assets');
 
 var inputScss = "./content/scss/**/*.scss"; /*watches sub folders inside sass folder */
-var output = "./dist/css";
+var outputCss = "./dist/css";
+var inputJs = "./content/js/customs/**/*.js"; /*watches sub folders inside customs script folder folder */
+var outputJs = "./dist/js";
 
 var sassOptions = {
   errLogToConsole: true,
@@ -25,7 +28,7 @@ gulp.task('scss', function () {
       browsers: ['> 1%']
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(output))
+    .pipe(gulp.dest(outputCss))
     .pipe(purgeSourcemaps())
     .pipe(rename({
       extname: '.min.css'
@@ -33,10 +36,21 @@ gulp.task('scss', function () {
     .pipe(cleanCSS({
       keepSpecialComments: 0
     }))
-    .pipe(gulp.dest(output));
+    .pipe(gulp.dest(outputCss));
 });
 
 gulp.task('watch-scss', function () {
   gulp.watch(inputScss, ['scss']);
+  gutil.log(process.version);
+});
+
+gulp.task('bundleJs', function () {
+  return gulp.src('./bundle-config.js')
+      .pipe(bundle())
+      .pipe(gulp.dest(outputJs));
+});
+
+gulp.task('watch-js', function () {
+  gulp.watch(inputJs, ['bundleJs']);
   gutil.log(process.version);
 });

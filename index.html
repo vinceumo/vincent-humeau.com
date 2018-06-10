@@ -7,7 +7,8 @@
     <title>Vincent Humeau (Vidal) - Front End Developer - London UK</title>
     <meta name="description" content="😃 Lead Front End Developer 🌍 London, UK"/>
 
-    
+    <link rel="stylesheet" href="dist/css/screen.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">   
 
     <link rel="apple-touch-icon" sizes="180x180" href="dist/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="dist/img/favicon-32x32.png">
@@ -32,20 +33,22 @@
             <li><a href="#"><span class="sr-only">Stackoverflow</span></a></li>
             <li><a href="#"><span class="sr-only">Instagram</span></a></li>
         </ul>
-        <!-- QR code API test http://goqr.me/api/doc/create-qr-code/ -->
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&format=svg&data=BEGIN:VCARD%0AVERSION:4.0%0AN:Humeau;Vincent;;Mr.;%0AFN:Vincent Humeau%0AORG:Dam Digital%0ATITLE:Lead Front End Developer%0AEMAIL:hello@vincent-humeau.com%0AURL:http://www.vincent-humeau.com%0AEND:VCARD" alt="QR code">
+        <!-- 
+            BEGIN:VCARD
+            VERSION:4.0 N:Humeau;Vincent;;Mr.;
+            FN:Vincent Humeau
+            ORG:Dam Digital
+            TITLE:Lead Front End Developer
+            EMAIL:hello@vincent-humeau.com
+            URL:http://www.vincent-humeau.com
+            END:VCARD
+
+            Use &#10 for newlines
+         -->
+        <div class="qrcode" data-qrcode-text="BEGIN:VCARD&#10VERSION:4.0&#10N:Humeau;Vincent;;Mr.;&#10FN:Vincent Humeau&#10ORG:Dam Digital&#10TITLE:Lead Front End Developer&#10EMAIL:hello@vincent-humeau.com&#10URL:http://www.vincent-humeau.com&#10END:VCARD">
+        </div>
     </main>
-    <script>
-        if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js').then(function() {
-            console.log('Service worker registered');
-            }).catch(function() {
-                console.log('Service worker registration failed');
-            });
-        }
-        else {
-            console.log('Service worker not supported');
-        }
-        </script>
+    <script src="dist/js/vendors.js"></script>
+    <script src="dist/js/customs.js"></script>
 </body>
 </html>
