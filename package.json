@@ -1,23 +1,23 @@
 {
-  "version": "1.0.0",
-  "name": "vincent.humeau",
+  "name": "vincent-humeau",
+  "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-bundle-assets": "^2.29.0",
-    "gulp-clean-css": "^3.9.0",
-    "gulp-purge-sourcemaps": "^1.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-strip-comments": "^2.5.1",
-    "gulp-util": "^3.0.8",
-    "browser-sync": "^2.18.13"
-  },
   "scripts": {
-    "startBrowserSync": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
-    "gulp": "gulp",
-    "startAtomicBulldog": "start npm run kssWatch && start npm run gulp watch-scss && npm run startBrowserSync"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "register-service-worker": "^1.0.0",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.3",
+    "@vue/cli-plugin-eslint": "^3.0.3",
+    "@vue/cli-plugin-pwa": "^3.0.3",
+    "@vue/cli-service": "^3.0.3",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.17"
   }
 }
