@@ -11,7 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^1.4.0",
+    "nuxt-edge": "^2.0.0-25615151.226b90d",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17"
   },
