@@ -16,20 +16,17 @@
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey">GitHub</a>
+          class="btn is-dark">GitHub</a>
       </div>
     </div>
-    <app/>
   </section>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
-import app from '~/App.vue'
 
 export default {
   components: {
-    app,
     AppLogo
   }
 }
