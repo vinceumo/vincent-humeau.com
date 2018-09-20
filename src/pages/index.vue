@@ -45,7 +45,7 @@ export default {
     display: block;
     font-weight: 300;
     font-size: 100px;
-    //color: $test;
+    color: tomato;
     letter-spacing: 1px;
   }
 }

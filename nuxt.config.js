@@ -1,5 +1,3 @@
-const resolve = require('path').resolve;
-
 module.exports = {
   /*
   ** Set source directory
@@ -30,15 +28,10 @@ module.exports = {
     }
   },
   css: ["@/assets/styles/global.scss"],
-  modules: [
-    [
-      "nuxt-sass-resources-loader",
-      [
-        "~assets/styles/vendors/_family.scss",
-        "~assets/styles/functions/*.scss",
-        "~assets/styles/mixins/*.scss",
-        "~assets/styles/variables/*.scss"
-      ]
-    ]
+  resources: [
+    "~assets/styles/vendors/_family.scss",
+    "~assets/styles/functions/**/*.scss",
+    "~assets/styles/mixins/**/*.scss",
+    "~assets/styles/variables/**/*.scss"
   ]
 };
