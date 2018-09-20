@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "nuxt-edge": "^2.0.0-25615151.226b90d",
+    "nuxt-sass-resources-loader": "^2.0.5",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17"
   },
