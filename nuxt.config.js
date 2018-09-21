@@ -1,37 +1,61 @@
+const pkg = require('./package')
+
 module.exports = {
-  /*
-  ** Set source directory
-  */
-  srcDir: "src/",
+  mode: 'universal',
+
   /*
   ** Headers of the page
   */
   head: {
-    title: "Welcome to Nuxt!",
+    title: pkg.name,
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Nuxt.js project" }
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
+
   /*
-  ** Customize the progress bar color
+  ** Customize the progress-bar color
   */
-  loading: { color: "#3B8070" },
+  loading: { color: '#FFFFFF' },
+
+  /*
+  ** Global CSS
+  */
+  css: [
+    "@/assets/styles/global.scss"
+  ],
+  resources: [
+    "@/assets/styles/vendors/_family.scss",
+    "@/assets/styles/functions/**/*.scss",
+    "@/assets/styles/mixins/**/*.scss",
+    "@/assets/styles/variables/**/*.scss"
+  ],
+  /*
+  ** Plugins to load before mounting the App
+  */
+  plugins: [
+  ],
+
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+  ],
+
   /*
   ** Build configuration
   */
   build: {
-    babel: {
-      presets: ["@vue/app"]
+    /*
+    ** You can extend webpack config here
+    */
+    extend(config, ctx) {
+      
     }
-  },
-  css: ["@/assets/styles/global.scss"],
-  resources: [
-    "~assets/styles/vendors/_family.scss",
-    "~assets/styles/functions/**/*.scss",
-    "~assets/styles/mixins/**/*.scss",
-    "~assets/styles/variables/**/*.scss"
-  ]
-};
+  }
+}

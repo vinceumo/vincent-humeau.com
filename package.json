@@ -1,29 +1,24 @@
 {
   "name": "vincent-humeau",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "My luminous Nuxt.js project",
+  "author": "Vincent Humeau",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "nuxt build",
-    "lint": "vue-cli-service lint",
     "dev": "nuxt",
+    "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt-edge": "^2.0.0-25615151.226b90d",
-    "nuxt-sass-resources-loader": "^2.0.5",
-    "register-service-worker": "^1.0.0",
-    "vue": "^2.5.17"
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
+    "nuxt-sass-resources-loader": "^2.0.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.3",
-    "@vue/cli-plugin-eslint": "^3.0.3",
-    "@vue/cli-plugin-pwa": "^3.0.3",
-    "@vue/cli-service": "^3.0.3",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
-    "vue-cli-plugin-nuxt-starter-template": "0.0.6",
-    "vue-template-compiler": "^2.5.17"
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.11.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.19.1"
   }
 }
