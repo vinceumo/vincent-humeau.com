@@ -29,12 +29,6 @@ module.exports = {
   css: [
     "@/assets/styles/global.scss"
   ],
-  resources: [
-    "@/assets/styles/vendors/_family.scss",
-    "@/assets/styles/functions/**/*.scss",
-    "@/assets/styles/mixins/**/*.scss",
-    "@/assets/styles/variables/**/*.scss"
-  ],
   /*
   ** Plugins to load before mounting the App
   */
@@ -45,6 +39,12 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['nuxt-sass-resources-loader', [
+      "@/assets/styles/vendors/_family.scss",
+      "@/assets/styles/functions/**/*.scss",
+      "@/assets/styles/mixins/**/*.scss",
+      "@/assets/styles/variables/**/*.scss"
+    ]]
   ],
 
   /*

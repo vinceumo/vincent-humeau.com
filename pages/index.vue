@@ -16,7 +16,7 @@
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey">GitHub</a>
+          class="btn is-dark">GitHub</a>
       </div>
     </div>
   </section>
@@ -32,7 +32,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
 .container
 {
   min-height: 100vh;
@@ -54,7 +55,7 @@ export default {
 {
   font-weight: 300;
   font-size: 42px;
-  color: #526488;
+  color: limegreen;
   word-spacing: 5px;
   padding-bottom: 15px;
 }
