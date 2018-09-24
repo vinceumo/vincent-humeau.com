@@ -1,15 +1,16 @@
 <template>
 <nav>
-  <ul>
-    <li><nuxt-link to="/">Home page</nuxt-link></li>
-    <li><nuxt-link to="/articles">Articles</nuxt-link></li>
-    <li><nuxt-link to="/projects">Projects</nuxt-link></li>
-  </ul>
+  <MainNavigationList/>
 </nav>
 </template>
 
 <script>
+import MainNavigationList from "~/components/MainNavigationList.vue";
+
 export default {
-  name: "MainNavigation"
+  name: "MainNavigation",
+  components: {
+    MainNavigationList
+  }
 }
 </script>

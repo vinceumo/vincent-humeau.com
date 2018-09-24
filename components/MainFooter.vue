@@ -1,11 +1,26 @@
 <template>
-  <footer class="has-bg-dark">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eum dolor similique suscipit fugiat dolores? Tempore hic ipsum numquam nam ut. Quibusdam, beatae assumenda? Repudiandae sunt explicabo natus nisi recusandae!</p>
+  <footer class="has-bg-dark has-my-4">
+    <div class="container">
+      <MainNavigationList/>
+      <ul>
+        <li><a href="https://github.com/vinceumo">Github</a></li>
+        <li><a href="https://codepen.io/vinceumo">Codepen</a></li>
+        <li><a href="https://www.linkedin.com/in/vincent-humeau/">Linkedin</a></li>
+        <li><a href="https://twitter.com/vince_umo">Twitter</a></li>
+        <li><a href="https://www.instagram.com/vince_umo/">Instagram</a></li>
+      </ul>
+      <img src="~/assets/images/tempQr.png" alt="Qr">
+    </div>
   </footer>
 </template>
 
 <script>
+import MainNavigationList from "~/components/MainNavigationList.vue";
+
 export default {
-  name: "MainFooter"
+  name: "MainFooter",
+  components: {
+    MainNavigationList
+  }
 }
 </script>
