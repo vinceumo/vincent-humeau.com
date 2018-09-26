@@ -1,6 +1,8 @@
 <template>
 <nav>
-  <MainNavigationList/>
+  <div class="container">
+    <MainNavigationList/>
+  </div>
 </nav>
 </template>
 
@@ -12,5 +14,25 @@ export default {
   components: {
     MainNavigationList
   }
-}
+};
 </script>
+
+<style lang="scss">
+nav {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+      display: inline-block;
+      margin-right: 1rem;
+
+      @include last(1) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+</style>

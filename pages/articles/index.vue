@@ -18,6 +18,27 @@ export default {
     return {
       articles: [
         {
+          title: "Inert - Avoid keyboard trap",
+          url:
+            "https://vinceumo.github.io/devNotes/a11y/2018/08/21/avoid-keyboard-trap.html",
+          date: "21/08/2018",
+          platform: "DevNotes"
+        },
+        {
+          title: "Vue - SCSS set up with Vue CLI 3",
+          url:
+            "https://vinceumo.github.io/devNotes/javascript/2018/08/13/vue-scss-setup.html",
+          date: "13/08/2018",
+          platform: "DevNotes"
+        },
+        {
+          title: "CSS custom properties (CSS variables) with SCSS",
+          url:
+            "https://vinceumo.github.io/devNotes/sass/2018/07/25/css-var-with-scss.html",
+          date: "25/07/2018",
+          platform: "DevNotes"
+        },
+        {
           title: "Photoshop 101: an introduction for web developers",
           url:
             "https://medium.freecodecamp.org/photoshop-101-introduction-for-web-developers-62d55232e62b",

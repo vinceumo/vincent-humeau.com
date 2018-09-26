@@ -14,8 +14,8 @@ export default {
   data() {
     return {
       navItems: [
-        { name: "Home Page", path: "/" },
-        { name: "Article", path: "/Articles" },
+        { name: "Home", path: "/" },
+        { name: "Articles", path: "/Articles" },
         { name: "Projects", path: "/Projects" }
       ]
     };

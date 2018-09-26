@@ -8,6 +8,7 @@
         <li><a href="https://www.linkedin.com/in/vincent-humeau/">Linkedin</a></li>
         <li><a href="https://twitter.com/vince_umo">Twitter</a></li>
         <li><a href="https://www.instagram.com/vince_umo/">Instagram</a></li>
+        <li><a href="https://vinceumo.github.io/devNotes/">devNotes</a></li>
       </ul>
       <img src="~/assets/images/tempQr.png" alt="Qr">
     </div>
@@ -22,5 +23,5 @@ export default {
   components: {
     MainNavigationList
   }
-}
+};
 </script>

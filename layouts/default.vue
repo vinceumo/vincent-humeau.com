@@ -2,7 +2,9 @@
   <div>
     <MainNavigation/>
     <main>
-      <nuxt/>
+      <div class="container">
+        <nuxt/>
+      </div>
     </main>
     <MainFooter/>
   </div>
@@ -17,6 +19,6 @@ export default {
     MainFooter,
     MainNavigation
   }
-}
+};
 </script>
 
