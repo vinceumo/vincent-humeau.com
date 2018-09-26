@@ -64,13 +64,14 @@ export default {
   tr {
     td {
       vertical-align: top;
-      padding-bottom: spacer(2);
+      padding-bottom: spacer(3);
+      line-height: 1.2;
 
       @include first(1) {
         font-style: italic;
         font-size: 0.7rem;
         padding-right: spacer(2);
-        padding-top: spacer(1);
+        line-height: 1.5;
 
         @include min(bp(sm)) {
           font-size: 0.8rem;
@@ -87,6 +88,7 @@ export default {
 
     a {
       font-weight: bold;
+      text-decoration: none;
     }
   }
 }
