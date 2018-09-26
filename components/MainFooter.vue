@@ -1,5 +1,5 @@
 <template>
-  <footer class="has-bg-dark has-my-4">
+  <footer class="has-bg-dark has-py-4 has-mt-4">
     <div class="container">
       <MainNavigationList/>
       <ul>
@@ -25,3 +25,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+footer {
+  > .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+</style>
