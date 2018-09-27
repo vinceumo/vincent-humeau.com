@@ -2,9 +2,7 @@
   <div class="page-container">
     <MainNavigation/>
     <main>
-      <div class="container">
-        <nuxt/>
-      </div>
+      <nuxt/>
     </main>
     <MainFooter/>
   </div>

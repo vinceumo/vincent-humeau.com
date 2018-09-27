@@ -1,9 +1,12 @@
 <template>
-<nav>
+<header>
   <div class="container">
-    <MainNavigationList/>
+    <nuxt-link v-bind:to="'/'" v-bind:class="'logo'">Vincent Humeau</nuxt-link>
+    <nav>
+      <MainNavigationList/>
+    </nav>
   </div>
-</nav>
+</header>
 </template>
 
 <script>
@@ -18,19 +21,33 @@ export default {
 </script>
 
 <style lang="scss">
-nav {
-  ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
+header > .container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: spacer(3);
+  padding-bottom: spacer(3);
 
-    li {
-      display: inline-block;
-      margin-right: 1rem;
+  .logo {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 
-      @include last(1) {
-        margin-right: 0;
+  nav {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 1rem;
+
+        @include last(1) {
+          margin-right: 0;
+        }
       }
     }
   }

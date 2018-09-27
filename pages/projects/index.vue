@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>Projects</h1>
     <ul>
       <li

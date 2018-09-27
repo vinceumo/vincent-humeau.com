@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>Articles</h1>
     <table class="articles-list">
       <tr
