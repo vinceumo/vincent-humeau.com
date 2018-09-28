@@ -1,7 +1,7 @@
 <template>
 <header>
   <div class="container">
-    <nuxt-link v-bind:to="'/'" v-bind:class="'logo'">Vincent Humeau</nuxt-link>
+    <AppLogo v-bind:appName="'Vincent Humeau'"/>
     <nav>
       <MainNavigationList/>
     </nav>
@@ -10,11 +10,13 @@
 </template>
 
 <script>
+import AppLogo from "~/components/AppLogo.vue";
 import MainNavigationList from "~/components/MainNavigationList.vue";
 
 export default {
   name: "MainNavigation",
   components: {
+    AppLogo,
     MainNavigationList
   }
 };
@@ -24,14 +26,9 @@ export default {
 header > .container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   padding-top: spacer(3);
   padding-bottom: spacer(3);
-
-  .logo {
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
 
   nav {
     ul {

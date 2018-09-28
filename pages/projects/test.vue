@@ -27,7 +27,7 @@
     text-align: center;
     font-size: 3rem;
     text-transform: uppercase;
-    color: tomato;
+    color: #ff6347;
     background: white;
   }
 }

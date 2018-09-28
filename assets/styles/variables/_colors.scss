@@ -17,10 +17,10 @@ $colors: (
   @return map-get($colors, $color);
 }
 
-@function color($color-name, $color-variant:null) {
+@function color($color-name, $color-variant: null) {
   @if ($color-variant != null) {
-    @return map-get(map-get($colors,$color-name),$color-variant);
+    @return map-get(map-get($colors, $color-name), $color-variant);
   } @else {
-    @return map-get(map-get($colors,$color-name), base);
+    @return map-get(map-get($colors, $color-name), base);
   }
 }
