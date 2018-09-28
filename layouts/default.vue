@@ -2,7 +2,7 @@
   <div class="page-container">
     <SkipNavigation/>
     <MainNavigation/>
-    <main id="main-content">
+    <main id="main-content" class="has-mt-6">
       <nuxt/>
     </main>
     <MainFooter/>

@@ -30,6 +30,7 @@ header {
   align-items: center;
   padding-top: spacer(3);
   padding-bottom: spacer(3);
+  border-bottom: 3px dashed color(dark);
 
   @include min(bp(sm)) {
     flex-direction: row;
