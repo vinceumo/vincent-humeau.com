@@ -1,12 +1,13 @@
 <template>
-<header>
-  <div class="container">
-    <AppLogo v-bind:appName="'Vincent Humeau'"/>
-    <nav>
+<section class="container">
+  <header>
+  <AppLogo v-bind:appName="'Vincent Humeau'"/>
+    <nav id="main-navigation">
       <MainNavigationList/>
     </nav>
-  </div>
-</header>
+  </header>
+</section>
+
 </template>
 
 <script>
@@ -23,12 +24,18 @@ export default {
 </script>
 
 <style lang="scss">
-header > .container {
+header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   padding-top: spacer(3);
   padding-bottom: spacer(3);
+
+  @include min(bp(sm)) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 
   nav {
     ul {
@@ -37,6 +44,11 @@ header > .container {
       display: flex;
       justify-content: flex-end;
       margin: 0;
+      margin-top: spacer(3);
+
+      @include min(bp(sm)) {
+        margin-top: 0;
+      }
 
       li {
         display: inline-block;
@@ -44,6 +56,11 @@ header > .container {
 
         @include last(1) {
           margin-right: 0;
+        }
+
+        a {
+          font-weight: bold;
+          text-decoration: none;
         }
       }
     }
