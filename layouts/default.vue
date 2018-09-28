@@ -1,7 +1,8 @@
 <template>
   <div class="page-container">
+    <SkipNavigation/>
     <MainNavigation/>
-    <main>
+    <main id="main-content">
       <nuxt/>
     </main>
     <MainFooter/>
@@ -11,11 +12,13 @@
 <script>
 import MainFooter from "~/components/MainFooter.vue";
 import MainNavigation from "~/components/MainNavigation.vue";
+import SkipNavigation from "~/components/SkipNavigation.vue";
 
 export default {
   components: {
     MainFooter,
-    MainNavigation
+    MainNavigation,
+    SkipNavigation
   }
 };
 </script>
