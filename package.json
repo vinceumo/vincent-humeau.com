@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.2.0",
     "nuxt-sass-resources-loader": "^2.0.5"
   },
   "devDependencies": {
     "node-sass": "^4.9.3",
     "nodemon": "^1.11.0",
     "sass-loader": "^7.1.0",
-    "webpack": "^4.19.1"
+    "webpack": "^4.20.2"
   }
 }
