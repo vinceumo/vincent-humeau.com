@@ -1,19 +1,20 @@
 <template>
   <div class="business-card">
-    <div class="business-card-content">
-    <QrCodeGenerator v-bind:qrData="vCardData"/>
+    <AppLogo v-bind:appName="'Vincent Humeau'"/>
+    <QrCodeGenerator class="qr-code" v-bind:qrData="vCardData"/>
     <a class="btn is-light" v-bind:href="vCardToDataUri" download='vincent-humeau.vcf'>Download VCard</a>
-    </div>
   </div>
 </template>
 
 
 <script>
+import AppLogo from "~/components/AppLogo.vue";
 import QrCodeGenerator from "~/components/QrCodeGenerator.vue";
 
 export default {
   name: "BusinessCard",
   components: {
+    AppLogo,
     QrCodeGenerator
   },
   props: {
@@ -40,23 +41,20 @@ export default {
   color: color(dark);
   text-align: center;
   border-radius: 5px;
-  position: relative;
-  display: block;
-  height: 0;
-  padding-bottom: (85 / 55) * 100%;
-  overflow: hidden;
-
-  .business-card-content {
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
-    padding: spacer(2);
-  }
+  padding: spacer(2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   a {
     color: color(dark);
+  }
+
+  .qr-code {
+    max-width: 200px;
+    margin-bottom: spacer(2);
+    margin-top: spacer(2);
   }
 }
 </style>
