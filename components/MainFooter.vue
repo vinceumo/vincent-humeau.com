@@ -18,7 +18,7 @@
       </section>
       <section>
         <h2>Add me to our contacts</h2>
-        <QrCodeGenerator v-bind:qrData="qrDataToDisplay"/>
+        <BusinessCard v-bind:vCardData="qrDataToDisplay"/>
       </section>
     </div>
   </footer>
@@ -26,13 +26,13 @@
 
 <script>
 import MainNavigationList from "~/components/MainNavigationList.vue";
-import QrCodeGenerator from "~/components/QrCodeGenerator.vue";
+import BusinessCard from "~/components/BusinessCard.vue";
 
 export default {
   name: "MainFooter",
   components: {
     MainNavigationList,
-    QrCodeGenerator
+    BusinessCard
   },
   data() {
     return {

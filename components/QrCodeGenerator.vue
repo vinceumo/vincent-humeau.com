@@ -1,5 +1,8 @@
 <template>
+<div>
   <div v-html="createQrCode" class="qrCode-svg"></div>
+</div>
+  
 </template>
 
 <script>
