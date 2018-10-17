@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <section class="container">
     <h1>Articles</h1>
     <table class="articles-list">
       <tr
@@ -9,7 +9,7 @@
         <td><a v-bind:href="item.url">{{ item.title }}</a> <i>({{ item.platform }})</i></td>
       </tr>
     </table>
-  </div>
+  </section>
 </template>
 
 <script>
