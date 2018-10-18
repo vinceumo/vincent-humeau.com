@@ -15,10 +15,14 @@ module.exports = {
     ]
   },
 
+  meta: {
+    theme_color: "#212121"
+  },
+
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: "#FFFFFF" },
+  loading: { color: "#212121" },
 
   /*
   ** Global CSS

@@ -40,7 +40,7 @@ export default {
         {
           title: "A11Y - Color blindness empathy test",
           brandColor: "#108fea",
-          image: "a11y-color-blindness.png",
+          image: "a11y-color-blindness.jpg",
           year: "2018",
           role: "Owner",
           technology: ["Vue.js", "SCSS", "PWA", "WebExtensions API"],
@@ -77,7 +77,7 @@ export default {
         {
           title: "Atomic Bulldog",
           brandColor: "#4b7e9e",
-          image: "atomic-bulldog.png",
+          image: "atomic-bulldog.jpg",
           year: "2018",
           role: "Owner",
           technology: ["SCSS", "Atomic Design", "Node KSS"],
@@ -93,7 +93,7 @@ export default {
         {
           title: "Atomic Bulldog Grid",
           brandColor: "#ec6ead",
-          image: "atomic-bulldog-grid.png",
+          image: "atomic-bulldog-grid.jpg",
           year: "2018",
           role: "Owner",
           technology: ["SCSS", "CSS Grid Layout"],
