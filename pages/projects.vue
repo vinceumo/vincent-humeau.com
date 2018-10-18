@@ -10,7 +10,7 @@
           <ul class="list-unstyle has-mt-3">
             <li><b>Role: </b>{{item.role}}</li>
             <li><b>Year: </b>{{item.year}}</li>
-            <li class="d-inline"><b>Technology: </b>
+            <li class="project-content--technologies"><b>Technologies: </b>
               <ul class="list-inline">
               <li v-for="(itemB, index) in item.technology" v-bind:key="'projectsTechKey' + index">{{itemB}}</li>
               </ul>
@@ -105,26 +105,26 @@ export default {
               url: "https://vinceumo.github.io/atomic-bulldog-grid/"
             }
           ]
-        },
-        {
-          title: "McArthurGlen",
-          brandColor: "#cd1232",
-          image: "mcarthurglen.jpg",
-          year: "2017/2018",
-          role: "Lead Front End Developer (Dam Digital)",
-          technology: ["SCSS", "JS", "jQuery", "C#", "Episerver"],
-          description: "Test",
-          links: [
-            {
-              name: "View Project",
-              url: "https://www.mcarthurglen.com/"
-            },
-            {
-              name: "View Case Study",
-              url: "https://www.damdigital.com/look/mcarthurglen/"
-            }
-          ]
         }
+        // {
+        //   title: "McArthurGlen",
+        //   brandColor: "#cd1232",
+        //   image: "mcarthurglen.jpg",
+        //   year: "2017/2018",
+        //   role: "Lead Front End Developer (Dam Digital)",
+        //   technology: ["SCSS", "JS", "jQuery", "C#", "Episerver"],
+        //   description: "Test",
+        //   links: [
+        //     {
+        //       name: "View Project",
+        //       url: "https://www.mcarthurglen.com/"
+        //     },
+        //     {
+        //       name: "View Case Study",
+        //       url: "https://www.damdigital.com/look/mcarthurglen/"
+        //     }
+        //   ]
+        // }
       ]
     };
   }
@@ -169,6 +169,24 @@ $project-card-bp: bp(md);
 
         @include last(1) {
           margin-bottom: 0;
+        }
+      }
+
+      & > ul {
+        & > li {
+          margin-bottom: spacer(2);
+        }
+      }
+
+      &--technologies {
+        & > ul {
+          display: inline;
+
+          > li {
+            padding: 0 spacer(2);
+            background-color: color(light);
+            margin: 0 spacer(2) spacer(2) 0;
+          }
         }
       }
     }
