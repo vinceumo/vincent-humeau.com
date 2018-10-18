@@ -32,6 +32,41 @@ export default {
     return {
       projects: [
         {
+          title: "A11Y - Color blindness empathy test",
+          brandColor: "#108fea",
+          image: "a11y-color-blindness.png",
+          role: "Owner",
+          technology: ["Vue.js", "SCSS", "PWA", "WebExtensions API"],
+          description: "",
+          links: [
+            {
+              name: "View Web Project",
+              url:
+                "https://vinceumo.github.io/A11Y-Color-Blindness-Empathy-Test/"
+            },
+            {
+              name: "Chrome extension",
+              url:
+                "https://chrome.google.com/webstore/detail/a11y-color-blindness-empa/idphhflanmeibmjgaciaadkmjebljhcc"
+            },
+            {
+              name: "Firefox extension",
+              url:
+                "https://addons.mozilla.org/en-GB/firefox/addon/a11y-color-blindness-test/"
+            },
+            {
+              name: "Web App Code",
+              url:
+                "https://github.com/vinceumo/A11Y-Color-Blindness-Empathy-Test"
+            },
+            {
+              name: "Browser Extension Code",
+              url:
+                "https://github.com/vinceumo/A11Y-Color-Blindness-Empathy-Test-browser-extensions"
+            }
+          ]
+        },
+        {
           title: "McArthurGlen",
           brandColor: "#cd1232",
           image: "mcarthurglen.jpg",
@@ -76,9 +111,11 @@ export default {
   grid-template-columns: repeat(2, 1fr);
 
   .project {
-    padding: spacer(2);
-    //border: 3px dashed color(dark);
+    padding: spacer(3);
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     & > * {
       @include first(1) {
