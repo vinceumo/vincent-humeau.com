@@ -3,24 +3,30 @@
     <h1>Projects</h1>
     <ul class="list-unstyle projects">
       <li class="project" v-for="(item, index) in projects"
-        v-bind:key="'projectsKey' + index">
-        <h2 v-bind:style="'color:' + item.brandColor">{{item.title}}</h2>
-        <img class="img-fluid" v-bind:src="require('~/assets/images/projects/' + item.image)" v-bind:alt="item.title + ' screenshot'">
-        <ul class="list-unstyle has-mt-3">
-          <li><b>Role: </b>{{item.role}}</li>
-          <li class="d-inline"><b>Technology: </b>
-            <ul class="list-inline">
-            <li v-for="(itemB, index) in item.technology" v-bind:key="'projectsTechKey' + index">{{itemB}}</li>
-            </ul>
-          </li>
-          <li v-if="item.description"><b>Description: </b>{{item.description}}</li>
-        </ul>
-        <ul class="list-unstyle has-mt-3">
-          <li v-for="(itemC, index) in item.links"
-          v-bind:key="'projectsLinkTechKey' + index">
-          <a v-bind:href="itemC.url">{{itemC.name}}</a>
-          </li>
-        </ul>
+        v-bind:key="'projectsKey' + index"
+        v-bind:style="'border-color:' + item.brandColor">
+        <div class="project-content">
+          <h2 v-bind:style="'color:' + item.brandColor">{{item.title}}</h2>
+          <ul class="list-unstyle has-mt-3">
+            <li><b>Role: </b>{{item.role}}</li>
+            <li><b>Year: </b>{{item.year}}</li>
+            <li class="d-inline"><b>Technology: </b>
+              <ul class="list-inline">
+              <li v-for="(itemB, index) in item.technology" v-bind:key="'projectsTechKey' + index">{{itemB}}</li>
+              </ul>
+            </li>
+            <li v-if="item.description"><b>Description: </b>{{item.description}}</li>
+          </ul>
+          <ul class="list-unstyle has-mt-3">
+            <li v-for="(itemC, index) in item.links"
+            v-bind:key="'projectsLinkTechKey' + index">
+            <a v-bind:href="itemC.url">{{itemC.name}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="project-img">
+          <img class="img-fluid" v-bind:src="require('~/assets/images/projects/' + item.image)" v-bind:alt="item.title + ' screenshot'">
+        </div>
       </li>
     </ul>
   </section>
@@ -35,9 +41,11 @@ export default {
           title: "A11Y - Color blindness empathy test",
           brandColor: "#108fea",
           image: "a11y-color-blindness.png",
+          year: "2018",
           role: "Owner",
           technology: ["Vue.js", "SCSS", "PWA", "WebExtensions API"],
-          description: "",
+          description:
+            "👁 Empathy test for color blindness and visual impairment",
           links: [
             {
               name: "View Web Project",
@@ -67,9 +75,42 @@ export default {
           ]
         },
         {
+          title: "Atomic Bulldog",
+          brandColor: "#4b7e9e",
+          image: "atomic-bulldog.png",
+          year: "2018",
+          role: "Owner",
+          technology: ["SCSS", "Atomic Design", "Node KSS"],
+          description:
+            "🍜 Atomic Bulldog is a Scss(Sass) boilerplate base on atomic design methodology. It integrates Node KSS to automatically generate a live styleguide/pattern library.",
+          links: [
+            {
+              name: "View Project",
+              url: "https://github.com/vinceumo/atomic-bulldog"
+            }
+          ]
+        },
+        {
+          title: "Atomic Bulldog Grid",
+          brandColor: "#ec6ead",
+          image: "atomic-bulldog-grid.png",
+          year: "2018",
+          role: "Owner",
+          technology: ["SCSS", "CSS Grid Layout"],
+          description:
+            "CSS (SCSS) grid, base on CSS grid layout with @supports fallback to flexbox (partial support).",
+          links: [
+            {
+              name: "View Project",
+              url: "https://vinceumo.github.io/atomic-bulldog-grid/"
+            }
+          ]
+        },
+        {
           title: "McArthurGlen",
           brandColor: "#cd1232",
           image: "mcarthurglen.jpg",
+          year: "2017/2018",
           role: "Lead Front End Developer (Dam Digital)",
           technology: ["SCSS", "JS", "jQuery", "C#", "Episerver"],
           description: "Test",
@@ -83,20 +124,6 @@ export default {
               url: "https://www.damdigital.com/look/mcarthurglen/"
             }
           ]
-        },
-        {
-          title: "Marie Curie",
-          brandColor: "#ffcd00",
-          image: "marie-curie.jpg",
-          role: "Front End Developer (Dam Digital)",
-          technology: ["SCSS", "JS", "jQuery", "C#", "Episerver", "Bootstrap"],
-          description: "",
-          links: [
-            {
-              name: "View Project",
-              url: "https://www.mariecurie.org.uk/"
-            }
-          ]
         }
       ]
     };
@@ -105,25 +132,59 @@ export default {
 </script>
 
 <style lang="scss">
-.projects {
-  display: grid;
-  grid-gap: spacer(3);
-  grid-template-columns: repeat(2, 1fr);
+$project-card-bp: bp(md);
 
+.projects {
   .project {
     padding: spacer(3);
+    margin-bottom: spacer(4);
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-top: spacer(2) solid;
+    text-align: center;
 
-    & > * {
-      @include first(1) {
-        margin-top: 0;
+    @include min($project-card-bp) {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+
+      @include odd() {
+        .project-img {
+          order: -1;
+          padding-right: spacer(4);
+        }
       }
 
-      @include last(1) {
-        margin-bottom: 0;
+      @include even() {
+        .project-img {
+          padding-left: spacer(4);
+        }
+      }
+    }
+
+    .project-content {
+      > * {
+        @include first(1) {
+          margin-top: 0;
+        }
+
+        @include last(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .project-img {
+      padding-top: spacer(3);
+
+      @include min($project-card-bp) {
+        display: flex;
+        align-items: center;
+        padding-top: 0;
+        max-width: 400px;
+      }
+
+      img {
+        box-shadow: 5px 5px 5px hsla(0, 0, 0, 0.1);
       }
     }
   }
