@@ -13,9 +13,19 @@ $colors: (
   )
 );
 
-@function color($color) {
-  @return map-get($colors, $color);
-}
+$gray-gray: (
+  0: hsl(0, 0%, 100%),
+  10: hsl(0, 0%, 95%),
+  20: hsl(0, 0%, 85%),
+  30: hsl(0, 0%, 75%),
+  40: hsl(0, 0%, 65%),
+  50: hsl(0, 0%, 54%),
+  60: hsl(0, 0%, 43%),
+  70: hsl(0, 0%, 33%),
+  80: hsl(0, 0%, 23%),
+  90: hsl(0, 0%, 13%),
+  100: hsl(0, 0%, 0%)
+);
 
 @function color($color-name, $color-variant: null) {
   @if ($color-variant != null) {
@@ -23,4 +33,8 @@ $colors: (
   } @else {
     @return map-get(map-get($colors, $color-name), base);
   }
+}
+
+@function color-gray($color) {
+  @return map-get($gray-gray, $color);
 }

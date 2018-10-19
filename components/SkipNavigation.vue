@@ -33,6 +33,7 @@
       border: 2px solid color-gray(20);
       text-align: center;
       text-decoration: none;
+      z-index: 1;
     }
   }
 }
