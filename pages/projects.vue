@@ -162,6 +162,9 @@ $project-card-bp: bp(md);
     }
 
     .project-content {
+      @include min($project-card-bp) {
+        flex: 1;
+      }
       > * {
         @include first(1) {
           margin-top: 0;
