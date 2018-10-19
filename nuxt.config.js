@@ -60,6 +60,6 @@ module.exports = {
   },
 
   workbox: {
-    offlinePage: "/offline.html"
+    offlinePage: "/offline/index.html"
   }
 };
