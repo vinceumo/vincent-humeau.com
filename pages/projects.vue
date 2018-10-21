@@ -43,7 +43,7 @@ export default {
           image: "a11y-color-blindness.jpg",
           year: "2018",
           role: "Owner",
-          technology: ["Vue.js", "SCSS", "PWA", "WebExtensions API"],
+          technology: ["Vue.js", "Webpack", "SCSS", "PWA", "WebExtensions API"],
           description:
             "👁 Empathy test for color blindness and visual impairment",
           links: [
@@ -71,6 +71,26 @@ export default {
               name: "Browser Extension Code",
               url:
                 "https://github.com/vinceumo/A11Y-Color-Blindness-Empathy-Test-browser-extensions"
+            }
+          ]
+        },
+        {
+          title: "DevNotes",
+          brandColor: "#EDAB1D",
+          image: "devnotes.jpg",
+          year: "2018",
+          role: "Owner",
+          technology: ["Jekyll", "Gulp", "SCSS", "PWA"],
+          description:
+            "✒ DevNotes/ TIL (Today I Learnt) is a collection of things I learned around web development",
+          links: [
+            {
+              name: "View Project",
+              url: "https://vinceumo.github.io/devNotes/"
+            },
+            {
+              name: "View Code",
+              url: "https://github.com/vinceumo/devNotes"
             }
           ]
         },
