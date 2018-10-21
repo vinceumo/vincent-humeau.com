@@ -5,8 +5,8 @@
       <li class="project" v-for="(item, index) in projects"
         v-bind:key="'projectsKey' + index"
         v-bind:style="'border-color:' + item.brandColor">
-        <div class="project-content">
-          <h2 v-bind:style="'color:' + item.brandColor">{{item.title}}</h2>
+        <h2 v-bind:style="'color:' + item.brandColor">{{item.title}}</h2>
+          <img class="img-fluid" v-bind:src="require('~/assets/images/projects/' + item.image)" v-bind:alt="item.title + ' screenshot'">
           <ul class="list-unstyle has-mt-3">
             <li><b>Role: </b>{{item.role}}</li>
             <li><b>Year: </b>{{item.year}}</li>
@@ -17,16 +17,12 @@
             </li>
             <li v-if="item.description"><b>Description: </b>{{item.description}}</li>
           </ul>
-          <ul class="list-unstyle has-mt-3">
+          <ul class="has-mt-3 links">
             <li v-for="(itemC, index) in item.links"
             v-bind:key="'projectsLinkTechKey' + index">
             <a v-bind:href="itemC.url">{{itemC.name}}</a>
             </li>
           </ul>
-        </div>
-        <div class="project-img">
-          <img class="img-fluid" v-bind:src="require('~/assets/images/projects/' + item.image)" v-bind:alt="item.title + ' screenshot'">
-        </div>
       </li>
     </ul>
   </section>
@@ -43,7 +39,7 @@ export default {
           image: "a11y-color-blindness.jpg",
           year: "2018",
           role: "Owner",
-          technology: ["Vue.js", "SCSS", "PWA", "WebExtensions API"],
+          technology: ["Vue.js", "Webpack", "SCSS", "PWA", "WebExtensions API"],
           description:
             "👁 Empathy test for color blindness and visual impairment",
           links: [
@@ -71,6 +67,26 @@ export default {
               name: "Browser Extension Code",
               url:
                 "https://github.com/vinceumo/A11Y-Color-Blindness-Empathy-Test-browser-extensions"
+            }
+          ]
+        },
+        {
+          title: "DevNotes",
+          brandColor: "#EDAB1D",
+          image: "devnotes.jpg",
+          year: "2018",
+          role: "Owner",
+          technology: ["Jekyll", "Gulp", "SCSS", "PWA"],
+          description:
+            "✒ DevNotes/ TIL (Today I Learnt) is a collection of things I learned around web development",
+          links: [
+            {
+              name: "View Project",
+              url: "https://vinceumo.github.io/devNotes/"
+            },
+            {
+              name: "View Code",
+              url: "https://github.com/vinceumo/devNotes"
             }
           ]
         },
@@ -135,78 +151,32 @@ export default {
 $project-card-bp: bp(md);
 
 .projects {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: spacer(3);
+
+  @include min($project-card-bp) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .project {
     padding: spacer(3);
-    margin-bottom: spacer(4);
     background-color: white;
     border-top: spacer(2) solid;
-    text-align: center;
 
-    @include min($project-card-bp) {
-      display: flex;
-      justify-content: space-between;
-      text-align: left;
-
-      @include odd() {
-        .project-img {
-          order: -1;
-          padding-right: spacer(4);
-        }
-      }
-
-      @include even() {
-        .project-img {
-          padding-left: spacer(4);
-        }
-      }
-    }
-
-    .project-content {
-      @include min($project-card-bp) {
-        flex: 1;
-      }
-      > * {
-        @include first(1) {
-          margin-top: 0;
-        }
-
-        @include last(1) {
-          margin-bottom: 0;
-        }
-      }
-
+    &--technologies {
       & > ul {
-        & > li {
-          margin-bottom: spacer(2);
-        }
-      }
+        display: inline;
 
-      &--technologies {
-        & > ul {
-          display: inline;
-
-          > li {
-            padding: 0 spacer(2);
-            background-color: color(light);
-            margin: 0 spacer(2) spacer(2) 0;
-          }
+        > li {
+          padding: 0 spacer(2);
+          background-color: color(light);
+          margin: 0 spacer(2) spacer(2) 0;
         }
       }
     }
 
-    .project-img {
-      padding-top: spacer(3);
-
-      @include min($project-card-bp) {
-        display: flex;
-        align-items: center;
-        padding-top: 0;
-        max-width: 400px;
-      }
-
-      img {
-        box-shadow: 5px 5px 5px hsla(0, 0, 0, 0.1);
-      }
+    img {
+      box-shadow: 5px 5px 5px hsla(0, 0, 0, 0.1);
     }
   }
 }
