@@ -34,20 +34,15 @@ export default {
     return {
       projects: [
         {
-          title: "A11Y - Color blindness empathy test",
-          brandColor: "#108fea",
-          image: "a11y-color-blindness.jpg",
+          title: "A11Y - Color blindness empathy test -- Browser extensions",
+          brandColor: "#3c3b5a",
+          image: "a11y-color-blindness-extensions.jpg",
           year: "2018",
           role: "Owner",
-          technology: ["Vue.js", "Webpack", "SCSS", "PWA", "WebExtensions API"],
+          technology: ["WebExtensions API"],
           description:
-            "👁 Empathy test for color blindness and visual impairment",
+            "👁 Browser extensions to test color blindness and visual impairment. ",
           links: [
-            {
-              name: "View Web Project",
-              url:
-                "https://vinceumo.github.io/A11Y-Color-Blindness-Empathy-Test/"
-            },
             {
               name: "Chrome extension",
               url:
@@ -59,14 +54,31 @@ export default {
                 "https://addons.mozilla.org/en-GB/firefox/addon/a11y-color-blindness-test/"
             },
             {
-              name: "Web App Code",
-              url:
-                "https://github.com/vinceumo/A11Y-Color-Blindness-Empathy-Test"
-            },
-            {
               name: "Browser Extension Code",
               url:
                 "https://github.com/vinceumo/A11Y-Color-Blindness-Empathy-Test-browser-extensions"
+            }
+          ]
+        },
+        {
+          title: "A11Y - Color blindness empathy test",
+          brandColor: "#108fea",
+          image: "a11y-color-blindness.jpg",
+          year: "2018",
+          role: "Owner",
+          technology: ["Vue.js", "Webpack", "SCSS", "PWA"],
+          description:
+            "👁 Empathy test for color blindness and visual impairment",
+          links: [
+            {
+              name: "View Project",
+              url:
+                "https://vinceumo.github.io/A11Y-Color-Blindness-Empathy-Test/"
+            },
+            {
+              name: "View Code",
+              url:
+                "https://github.com/vinceumo/A11Y-Color-Blindness-Empathy-Test"
             }
           ]
         },
@@ -163,7 +175,7 @@ $project-card-bp: bp(md);
     background-color: white;
     border-top: spacer(2) solid;
 
-    &--technologies {
+    .project-content--technologies {
       & > ul {
         display: inline;
 
