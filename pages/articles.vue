@@ -18,6 +18,13 @@ export default {
     return {
       articles: [
         {
+          title: "Cross Browser extensions with WebExtensions API - 101",
+          url:
+            "https://vinceumo.github.io/devNotes/javascript/2018/10/23/webextensionapi.html",
+          date: "23/10/2018",
+          platform: "DevNotes"
+        },
+        {
           title: "Inert - Avoid keyboard trap",
           url:
             "https://vinceumo.github.io/devNotes/a11y/2018/08/21/avoid-keyboard-trap.html",

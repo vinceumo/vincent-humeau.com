@@ -62,7 +62,7 @@ export default {
         },
         {
           title: "A11Y - Color blindness empathy test",
-          brandColor: "#108fea",
+          brandColor: "#acb139",
           image: "a11y-color-blindness.jpg",
           year: "2018",
           role: "Owner",
