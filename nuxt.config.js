@@ -62,5 +62,9 @@ module.exports = {
 
   workbox: {
     offlinePage: "/offline/index.html"
+  },
+
+  markdownit: {
+    html: true
   }
 };
