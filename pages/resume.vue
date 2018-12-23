@@ -119,13 +119,13 @@ SLL247 is a fast growing, multi-award winning web security company.
 
 ## Education
 
-### IDRAC Business School Lyon, France
+### IDRAC Business School | Lyon, France
 
 *2010 to 2013, 2014 to 2016 (5 academic years)*
 
 Master's degree - Marketing and Management
 
-### Đại học Ngoại thương (Foreign Trade University) University exchange program | Hanoi, Vietnam
+### Đại học Ngoại thương (Foreign Trade University) University | Hanoi, Vietnam
 
 *2014 to 2015 (1 academic year)*
 
