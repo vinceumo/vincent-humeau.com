@@ -13,13 +13,13 @@
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.2.0",
+    "nuxt": "^2.3.4",
     "nuxt-sass-resources-loader": "^2.0.5"
   },
   "devDependencies": {
-    "node-sass": "^4.9.3",
-    "nodemon": "^1.11.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
     "sass-loader": "^7.1.0",
-    "webpack": "^4.20.2"
+    "webpack": "^4.28.2"
   }
 }
