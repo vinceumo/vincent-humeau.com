@@ -46,7 +46,8 @@ module.exports = {
         "@/assets/styles/variables/**/*.scss"
       ]
     ],
-    "@nuxtjs/pwa"
+    "@nuxtjs/pwa",
+    '@nuxtjs/markdownit'
   ],
 
   /*
