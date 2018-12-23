@@ -1,9 +1,8 @@
 <template>
   <section class="container">
     <h1>Projects</h1>
-    <h2>Personal Projects</h2>
     <ul class="list-unstyle projects">
-      <li class="project" v-for="(item, index) in projectsPersonal"
+      <li class="project" v-for="(item, index) in projects"
         v-bind:key="'projectsKey' + index"
         v-bind:style="'border-color:' + item.brandColor">
         <h2 v-bind:style="'color:' + item.brandColor">{{item.title}}</h2>
@@ -33,7 +32,26 @@
 export default {
   data() {
     return {
-      projectsPersonal: [
+      projects: [
+        {
+          title: "McArthurGlen",
+          brandColor: "#cd1232",
+          image: "mcarthurglen.jpg",
+          year: "2017/2018",
+          role: "Lead Front End Developer (Dam Digital)",
+          technology: ["SCSS", "JS", "jQuery", "C#", "Episerver"],
+          description: "Test",
+          links: [
+            {
+              name: "View Project",
+              url: "https://www.mcarthurglen.com/"
+            },
+            {
+              name: "View Case Study",
+              url: "https://www.damdigital.com/look/mcarthurglen/"
+            }
+          ]
+        },
         {
           title: "A11Y - Color blindness empathy test -- Browser extensions",
           brandColor: "#3c3b5a",
@@ -135,25 +153,6 @@ export default {
             }
           ]
         }
-        // {
-        //   title: "McArthurGlen",
-        //   brandColor: "#cd1232",
-        //   image: "mcarthurglen.jpg",
-        //   year: "2017/2018",
-        //   role: "Lead Front End Developer (Dam Digital)",
-        //   technology: ["SCSS", "JS", "jQuery", "C#", "Episerver"],
-        //   description: "Test",
-        //   links: [
-        //     {
-        //       name: "View Project",
-        //       url: "https://www.mcarthurglen.com/"
-        //     },
-        //     {
-        //       name: "View Case Study",
-        //       url: "https://www.damdigital.com/look/mcarthurglen/"
-        //     }
-        //   ]
-        // }
       ]
     };
   }
