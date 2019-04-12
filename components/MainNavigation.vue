@@ -1,13 +1,12 @@
 <template>
-<section class="container">
-  <header>
-  <AppLogo v-bind:appName="'Vincent Humeau'"/>
-    <nav id="main-navigation">
-      <MainNavigationList/>
-    </nav>
-  </header>
-</section>
-
+  <section class="container">
+    <header>
+      <AppLogo v-bind:appName="'Vincent Humeau'"/>
+      <nav id="main-navigation">
+        <MainNavigationList/>
+      </nav>
+    </header>
+  </section>
 </template>
 
 <script>

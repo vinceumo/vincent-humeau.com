@@ -4,8 +4,8 @@ module.exports = {
   mode: "universal",
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: "Vincent Humeau - Web Developer",
     meta: [
@@ -20,43 +20,44 @@ module.exports = {
   },
 
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: "#212121" },
 
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: ["@/assets/styles/global.scss"],
+
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: [],
 
   /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    [
-      "nuxt-sass-resources-loader",
-      [
-        "@/assets/styles/vendors/_family.scss",
-        "@/assets/styles/functions/**/*.scss",
-        "@/assets/styles/mixins/**/*.scss",
-        "@/assets/styles/variables/**/*.scss"
-      ]
-    ],
-    "@nuxtjs/pwa",
-    '@nuxtjs/markdownit'
-  ],
+   ** Nuxt.js modules
+   */
+  modules: ["@nuxtjs/pwa", "@nuxtjs/markdownit", "@nuxtjs/style-resources"],
 
+  purgeCSS: {
+    // your settings here to override defaults
+  },
+
+  styleResources: {
+    scss: [
+      "./assets/styles/vendors/_family.scss",
+      "./assets/styles/functions/**/*.scss",
+      "./assets/styles/mixins/**/*.scss",
+      "./assets/styles/variables/**/*.scss"
+    ]
+  },
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {}
   },
 

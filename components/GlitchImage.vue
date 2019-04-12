@@ -1,7 +1,14 @@
 <template>
   <div class="glitch">
     <img class="img-fluid" v-bind:src="imageSource" v-bind:alt="imageAlt">
-    <img v-for="n in 4" v-bind:key="'key' + n" class="img-fluid" v-bind:src="imageSource" alt="" aria-hidden="true">
+    <img
+      v-for="n in 4"
+      v-bind:key="'key' + n"
+      class="img-fluid"
+      v-bind:src="imageSource"
+      alt
+      aria-hidden="true"
+    >
   </div>
 </template>
 
