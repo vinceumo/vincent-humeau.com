@@ -2,11 +2,12 @@
   <section class="container">
     <h1>Articles</h1>
     <table class="articles-list">
-      <tr
-        v-for="(item, index) in articles"
-        v-bind:key="'articlesKey' + index">
+      <tr v-for="(item, index) in articles" v-bind:key="'articlesKey' + index">
         <td>{{ item.date }}</td>
-        <td><a v-bind:href="item.url">{{ item.title }}</a> <i>({{ item.platform }})</i></td>
+        <td>
+          <a v-bind:href="item.url">{{ item.title }}</a>
+          <i>({{ item.platform }})</i>
+        </td>
       </tr>
     </table>
   </section>
@@ -60,6 +61,17 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    getRssFeed(url) {
+      let xmlHttp = null;
+
+      xmlHttp = new XMLHttpRequest();
+      xmlHttp.open("GET", url, false);
+      xmlHttp.send(null);
+      console.log(xmlHttp.responseXML);
+      return xmlHttp.responseXML;
+    }
   }
 };
 </script>
