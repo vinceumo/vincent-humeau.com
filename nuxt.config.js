@@ -44,12 +44,7 @@ module.exports = {
   },
 
   styleResources: {
-    scss: [
-      "./assets/styles/vendors/_family.scss",
-      "./assets/styles/functions/**/*.scss",
-      "./assets/styles/mixins/**/*.scss",
-      "./assets/styles/variables/**/*.scss"
-    ]
+    scss: ["./assets/styles/_global-style-resources.scss"]
   },
   /*
    ** Build configuration
