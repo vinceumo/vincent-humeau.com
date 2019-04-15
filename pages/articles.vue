@@ -2,8 +2,8 @@
   <section class="container">
     <h1>Articles</h1>
     <table class="articles-list">
-      <tr v-for="(item, index) in articles" v-bind:key="'articlesKey' + index">
-        <td>{{ item.date }}</td>
+      <tr v-for="(item, index) in feeds[0].items" v-bind:key="'articlesKey' + index">
+        <!-- <td>{{ item.date }}</td> -->
         <td>
           <a v-bind:href="item.url">{{ item.title }}</a>
           <i>({{ item.platform }})</i>
@@ -17,6 +17,14 @@
 export default {
   data() {
     return {
+      feeds: [
+        {
+          title: "devNotes",
+          baseUrl: "https://vinceumo.github.io",
+          rssFeed: "/devNotes/feed.xml",
+          items: []
+        }
+      ],
       articles: [
         {
           title: "Cross Browser extensions with WebExtensions API - 101",
@@ -62,15 +70,29 @@ export default {
       ]
     };
   },
+  mounted() {
+    for (let feed of this.feeds) {
+      const _this = this;
+      const rssFeed = this.getRssFeed(`${feed.baseUrl}${feed.rssFeed}`);
+      const entries = rssFeed.querySelectorAll("entry");
+      for (let entry of entries) {
+        feed.items.push({
+          title: entry.querySelector("title").innerText,
+          url: `${feed.baseUrl}${entry
+            .querySelector("link")
+            .getAttribute("href")}`
+        });
+      }
+      console.log(feed);
+    }
+  },
   methods: {
-    getRssFeed(url) {
-      let xmlHttp = null;
-
-      xmlHttp = new XMLHttpRequest();
-      xmlHttp.open("GET", url, false);
-      xmlHttp.send(null);
-      console.log(xmlHttp.responseXML);
-      return xmlHttp.responseXML;
+    getRssFeed(websiteUrl) {
+      let xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", websiteUrl, false);
+      xmlhttp.send();
+      const xmlDoc = xmlhttp.responseXML;
+      return xmlDoc;
     }
   }
 };
