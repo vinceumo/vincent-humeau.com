@@ -1,8 +1,8 @@
 import Vue from "vue";
 
-const dateFormat = function(value) {
-  if (!value) return "";
-  return value;
+const dateFormat = function(date) {
+  if (!date) return "";
+  return date.toLocaleDateString("en-GB");
 };
 
 Vue.filter("dateFormat", dateFormat);
