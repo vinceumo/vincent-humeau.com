@@ -1,7 +1,8 @@
 import Vue from "vue";
 
 const dateFormat = function(value) {
-  return `hello ${value}`;
+  if (!value) return "";
+  return value;
 };
 
 Vue.filter("dateFormat", dateFormat);
