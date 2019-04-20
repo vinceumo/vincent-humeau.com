@@ -1,14 +1,17 @@
 <template>
   <section class="container">
     <h1>Articles</h1>
-    <table class="articles-list">
-      <tr v-for="(item, index) in feeds[0].items" v-bind:key="'articlesKey' + index">
-        <td>{{ item.date | dateFormat }}</td>
-        <td>
-          <a v-bind:href="item.url">{{ item.title }}</a>
-        </td>
-      </tr>
-    </table>
+    <div v-for="(feed, index) in feeds" v-bind:key="'feedKey' + index">
+      <h2>{{ feed.title }}</h2>
+      <table class="articles-list">
+        <tr v-for="(item, index) in feed.items" v-bind:key="'articlesKey' + index">
+          <td>{{ item.date | dateFormat }}</td>
+          <td>
+            <a v-bind:href="item.url">{{ item.title }}</a>
+          </td>
+        </tr>
+      </table>
+    </div>
   </section>
 </template>
 
@@ -22,6 +25,12 @@ export default {
           baseUrl: "https://vinceumo.github.io",
           rssFeed: "/devNotes/feed.xml",
           items: []
+        },
+        {
+          title: "dev.to",
+          baseUrl: "",
+          rssFeed: "https://dev.to/feed/vinceumo",
+          items: []
         }
       ]
     };
@@ -30,17 +39,31 @@ export default {
     for (let feed of this.feeds) {
       const _this = this;
       const rssFeed = this.getRssFeed(`${feed.baseUrl}${feed.rssFeed}`);
-      const entries = rssFeed.querySelectorAll("entry");
-      for (let entry of entries) {
-        feed.items.push({
-          title: entry.querySelector("title").innerHTML,
-          url: `${feed.baseUrl}${entry
-            .querySelector("link")
-            .getAttribute("href")}`,
-          date: new Date(entry.querySelector("published").innerHTML)
-        });
+
+      switch (feed.title) {
+        case "devNotes":
+          let entries = rssFeed.querySelectorAll("entry");
+          for (let entry of entries) {
+            feed.items.push({
+              title: entry.querySelector("title").innerHTML,
+              url: `${feed.baseUrl}${entry
+                .querySelector("link")
+                .getAttribute("href")}`,
+              date: new Date(entry.querySelector("published").innerHTML)
+            });
+          }
+          break;
+        case "dev.to":
+          entries = rssFeed.querySelectorAll("item");
+          for (let entry of entries) {
+            feed.items.push({
+              title: entry.querySelector("title").innerHTML,
+              url: `${feed.baseUrl}${entry.querySelector("link").innerHTML}`,
+              date: new Date(entry.querySelector("pubDate").innerHTML)
+            });
+          }
+          break;
       }
-      console.log(feed);
     }
   },
   methods: {
