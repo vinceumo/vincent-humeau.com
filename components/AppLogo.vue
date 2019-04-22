@@ -1,7 +1,7 @@
 <template>
   <nuxt-link v-bind:to="'/'" v-bind:class="'logo'">
-      <img src="~/assets/images/logo.svg" alt="vinceumo">
-      {{ appName }}
+    <img src="~/assets/images/logo.svg" alt="vinceumo">
+    {{ appName }}
   </nuxt-link>
 </template>
 
@@ -19,15 +19,15 @@ export default {
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
   line-height: 1;
 
   img {
-    max-width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: spacer(2);
+    max-width: 70px;
   }
 }
 </style>

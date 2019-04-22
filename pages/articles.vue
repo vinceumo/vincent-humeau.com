@@ -1,16 +1,30 @@
 <template>
   <section class="container">
     <h1>Articles</h1>
+    <p>
+      I love to write about web development and share what I learn. I publish all my blog posts on
+      <a
+        href="https://dev.to/vinceumo"
+      >dev.to</a>. I publish them as well with some smaller posts (notes) on my personal blog,
+      <a
+        href="https://vinceumo.github.io/devNotes/"
+      >devNotes</a>.
+    </p>
     <div v-for="(feed, index) in feeds" v-bind:key="'feedKey' + index">
-      <h2>{{ feed.title }}</h2>
-      <table class="articles-list">
-        <tr v-for="(item, index) in feed.items" v-bind:key="'articlesKey' + index">
-          <td>{{ item.date | dateFormat }}</td>
-          <td>
-            <a v-bind:href="item.url">{{ item.title }}</a>
-          </td>
-        </tr>
-      </table>
+      <div v-if="feed.items.length">
+        <h2 class="has-mt-6">{{ feed.title }}</h2>
+        <p>
+          <i>{{ feed.subtitle }}</i>
+        </p>
+        <table class="articles-list">
+          <tr v-for="(item, index) in feed.items" v-bind:key="'articlesKey' + index">
+            <td>{{ item.date | dateFormat }}</td>
+            <td>
+              <a v-bind:href="item.url">{{ item.title }}</a>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   </section>
 </template>
@@ -21,15 +35,17 @@ export default {
     return {
       feeds: [
         {
-          title: "devNotes",
-          baseUrl: "https://vinceumo.github.io",
-          rssFeed: "/devNotes/feed.xml",
+          title: "dev.to",
+          subtitle: "Last published posts",
+          baseUrl: "",
+          rssFeed: "https://dev.to/feed/vinceumo",
           items: []
         },
         {
-          title: "dev.to",
-          baseUrl: "",
-          rssFeed: "https://dev.to/feed/vinceumo",
+          title: "devNotes",
+          subtitle: "Last 10 published posts",
+          baseUrl: "https://vinceumo.github.io",
+          rssFeed: "/devNotes/feed.xml",
           items: []
         }
       ]
@@ -73,6 +89,8 @@ export default {
       xmlhttp.send();
       const xmlDoc = xmlhttp.responseXML;
       return xmlDoc;
+
+      // xmlhttp.onerror = function() {};
     }
   }
 };

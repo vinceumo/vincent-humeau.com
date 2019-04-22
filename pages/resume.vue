@@ -26,42 +26,19 @@
 
 ### Marketing
 
-- Email Marketing
-- KPI Follow-up
-- Split testing
-- Direct mailing
-- Brand strategy
-- Google Analytics
-- Google Tag Manager
-- Mailchimp/Dotmailer
-- SalesForce
+Email Marketing, KPI Follow-up, Split testing, Direct mailing, Brand strategy, Google Analytics, Google Tag Manager, Mailchimp/Dotmailer, SalesForce
 
 ### Management
 
-- Line management
-- Project management
-- Mentoring
+Line management, Project management, Mentoring
 
 ### Graphic Design
 
-- UI and UX
-- Wireframing
-- Branding
-- Print design
-- Photoshop CC
-- Illustrator CC
-- Indesign CC
-- Adobe Xd
-- Premiere Pro CC
-- After Effects CC
+UI and UX, Wireframing, Branding, Print design, Photoshop CC, Illustrator CC, Indesign CC, Adobe Xd
 
 ### Soft Skills
 
-- Creativity
-- Problem solving
-- Adaptability
-- Team spirit
-- Enthusiasm
+Creativity, Problem solving, Adaptability, Team spirit, Enthusiasm
 
 ### Languages
 
@@ -146,12 +123,29 @@ Training in UI/UX design, front-end integration, print design, 3D and motion des
 </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@media print {
+  header,
+  footer,
+  h1 {
+    display: none !important;
+  }
+
+  .resume {
+    font-size: 14px;
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 35% 1fr;
+      grid-gap: 2rem;
+    }
+  }
+}
 .resume {
-  font-size: 16px;
+  // font-size: 15px;
 
   .resume-grid {
-    @include min(bp(sm)){
+    @include min(bp(sm)) {
       display: grid;
       grid-template-columns: 35% 1fr;
       grid-gap: 2rem;
@@ -159,24 +153,26 @@ Training in UI/UX design, front-end integration, print design, 3D and motion des
   }
 
   h2 {
-    margin-top: 1rem;
-    margin-bottom: 0.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0rem;
     padding-bottom: 0.25rem;
     border-bottom: 3px dashed color(dark);
   }
 
   h3 {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
     margin-bottom: 0.25rem;
   }
 
-  h4, p, ul {
+  h4,
+  p,
+  ul {
     margin-top: 0;
     margin-bottom: 0.25rem;
   }
 
   ul {
-    padding-left: 1rem;
+    padding-left: 1.5rem;
   }
 }
 </style>
