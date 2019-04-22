@@ -38,7 +38,7 @@ export default {
       feeds: [
         {
           title: "dev.to",
-          subtitle: "Last published posts",
+          subtitle: "Last posts published",
           profileUrl: "https://dev.to/vinceumo",
           baseUrl: "",
           rssFeed: "https://dev.to/feed/vinceumo",
@@ -46,7 +46,7 @@ export default {
         },
         {
           title: "devNotes",
-          subtitle: "Last 10 published posts",
+          subtitle: "Last 10 posts published",
           profileUrl: "https://vinceumo.github.io",
           baseUrl: "https://vinceumo.github.io",
           rssFeed: "/devNotes/feed.xml",
