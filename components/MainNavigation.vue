@@ -42,12 +42,14 @@ header {
       list-style-type: none;
       padding: 0;
       display: flex;
-      justify-content: flex-end;
+      flex-wrap: wrap;
+      justify-content: center;
       margin: 0;
       margin-top: spacer(3);
 
       @include min(bp(sm)) {
         margin-top: 0;
+        justify-content: flex-end;
       }
 
       li {

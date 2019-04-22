@@ -12,7 +12,9 @@
     </p>
     <div v-for="(feed, index) in feeds" v-bind:key="'feedKey' + index">
       <div v-if="feed.items.length">
-        <h2 class="has-mt-6">{{ feed.title }}</h2>
+        <h2 class="has-mt-6">
+          <a v-bind:href="feed.profileUrl">{{ feed.title }}</a>
+        </h2>
         <p>
           <i>{{ feed.subtitle }}</i>
         </p>
@@ -37,6 +39,7 @@ export default {
         {
           title: "dev.to",
           subtitle: "Last published posts",
+          profileUrl: "https://dev.to/vinceumo",
           baseUrl: "",
           rssFeed: "https://dev.to/feed/vinceumo",
           items: []
@@ -44,6 +47,7 @@ export default {
         {
           title: "devNotes",
           subtitle: "Last 10 published posts",
+          profileUrl: "https://vinceumo.github.io",
           baseUrl: "https://vinceumo.github.io",
           rssFeed: "/devNotes/feed.xml",
           items: []
@@ -90,13 +94,18 @@ export default {
       const xmlDoc = xmlhttp.responseXML;
       return xmlDoc;
 
-      // xmlhttp.onerror = function() {};
+      xmlhttp.onerror = function() {
+        console.log("hheeello");
+      };
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+h2 a {
+  text-decoration: none;
+}
 .articles-list {
   vertical-align: top;
 
