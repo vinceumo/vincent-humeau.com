@@ -49,7 +49,7 @@ export default {
           subtitle: "Last 10 posts published",
           profileUrl: "https://vinceumo.github.io",
           baseUrl: "https://vinceumo.github.io",
-          rssFeed: "/devNotes/feed.xml",
+          rssFeed: "/devNotes/index.xml",
           items: []
         }
       ]
@@ -59,30 +59,14 @@ export default {
     for (let feed of this.feeds) {
       const _this = this;
       const rssFeed = this.getRssFeed(`${feed.baseUrl}${feed.rssFeed}`);
+      const entries = rssFeed.querySelectorAll("item");
 
-      switch (feed.title) {
-        case "devNotes":
-          let entries = rssFeed.querySelectorAll("entry");
-          for (let entry of entries) {
-            feed.items.push({
-              title: entry.querySelector("title").innerHTML,
-              url: `${feed.baseUrl}${entry
-                .querySelector("link")
-                .getAttribute("href")}`,
-              date: new Date(entry.querySelector("published").innerHTML)
-            });
-          }
-          break;
-        case "dev.to":
-          entries = rssFeed.querySelectorAll("item");
-          for (let entry of entries) {
-            feed.items.push({
-              title: entry.querySelector("title").innerHTML,
-              url: `${feed.baseUrl}${entry.querySelector("link").innerHTML}`,
-              date: new Date(entry.querySelector("pubDate").innerHTML)
-            });
-          }
-          break;
+      for (let entry of entries) {
+        feed.items.push({
+          title: entry.querySelector("title").innerHTML,
+          url: `${feed.baseUrl}${entry.querySelector("link").innerHTML}`,
+          date: new Date(entry.querySelector("pubDate").innerHTML)
+        });
       }
     }
   },

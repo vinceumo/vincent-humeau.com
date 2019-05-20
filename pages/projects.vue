@@ -52,25 +52,42 @@ export default {
   data() {
     return {
       projects: [
-        // {
-        //   title: "McArthurGlen",
-        //   brandColor: "#cd1232",
-        //   image: "mcarthurglen.jpg",
-        //   year: "2017/2018",
-        //   role: "Lead Front End Developer (Dam Digital)",
-        //   technology: ["SCSS", "JS", "jQuery", "C#", "Episerver"],
-        //   description: "Test",
-        //   links: [
-        //     {
-        //       name: "View Project",
-        //       url: "https://www.mcarthurglen.com/"
-        //     },
-        //     {
-        //       name: "View Case Study",
-        //       url: "https://www.damdigital.com/look/mcarthurglen/"
-        //     }
-        //   ]
-        // },
+        {
+          title: "McArthurGlen",
+          brandColor: "#cd1232",
+          image: "mcarthurglen.jpg",
+          year: "2017/2018",
+          role: "Lead Front End Developer (Dam Digital)",
+          technology: ["SCSS", "vanilla JS", "C#", "Episerver"],
+          links: [
+            {
+              name: "View Project",
+              url: "https://www.mcarthurglen.com/"
+            },
+            {
+              name: "View Case Study",
+              url: "https://www.damdigital.com/look/mcarthurglen/"
+            }
+          ]
+        },
+        {
+          title: "Auto Windscreens",
+          brandColor: "#3db7e4",
+          image: "auto.png",
+          year: "2018",
+          role: "Lead Front End Developer (Dam Digital)",
+          technology: ["SCSS", "vanilla JS", "Umbraco"],
+          links: [
+            {
+              name: "View Project",
+              url: "https://www.autowindscreens.co.uk/"
+            },
+            {
+              name: "View Case Study",
+              url: "https://www.damdigital.com/look/auto-windscreens/"
+            }
+          ]
+        },
         {
           title: "A11Y - Color blindness empathy test -- Browser extensions",
           brandColor: "#3c3b5a",
@@ -126,7 +143,7 @@ export default {
           image: "devnotes.jpg",
           year: "2018",
           role: "Owner",
-          technology: ["Jekyll", "Gulp", "SCSS", "PWA"],
+          technology: ["Hugo", "Webpack", "SCSS", "PWA", "forestry.io"],
           description:
             "✒ DevNotes/ TIL (Today I Learnt) is a collection of things I learned around web development",
           links: [
@@ -137,6 +154,26 @@ export default {
             {
               name: "View Code",
               url: "https://github.com/vinceumo/devNotes"
+            }
+          ]
+        },
+        {
+          title: "travel-log",
+          brandColor: "#000000",
+          image: "travel-log.png",
+          year: "2019",
+          role: "Owner",
+          technology: ["Hugo", "SCSS", "PWA"],
+          description:
+            "🛫 My Travel Log, build with hugo",
+          links: [
+            {
+              name: "View Project",
+              url: "https://vinceumo.github.io/travel-log"
+            },
+            {
+              name: "View Code",
+              url: "https://github.com/vinceumo/travel-log"
             }
           ]
         },
