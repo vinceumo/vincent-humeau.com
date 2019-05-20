@@ -73,7 +73,7 @@ export default {
         {
           title: "Auto Windscreens",
           brandColor: "#3db7e4",
-          image: "auto.png",
+          image: "auto.jpg",
           year: "2018",
           role: "Lead Front End Developer (Dam Digital)",
           technology: ["SCSS", "vanilla JS", "Umbraco"],
@@ -160,7 +160,7 @@ export default {
         {
           title: "travel-log",
           brandColor: "#000000",
-          image: "travel-log.png",
+          image: "travel-log.jpg",
           year: "2019",
           role: "Owner",
           technology: ["Hugo", "SCSS", "PWA"],

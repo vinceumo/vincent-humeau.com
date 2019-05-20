@@ -43,14 +43,6 @@ export default {
           baseUrl: "",
           rssFeed: "https://dev.to/feed/vinceumo",
           items: []
-        },
-        {
-          title: "devNotes",
-          subtitle: "Last 10 posts published",
-          profileUrl: "https://vinceumo.github.io",
-          baseUrl: "https://vinceumo.github.io",
-          rssFeed: "/devNotes/index.xml",
-          items: []
         }
       ]
     };
