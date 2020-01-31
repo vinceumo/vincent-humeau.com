@@ -51,11 +51,17 @@ Creativity, Problem solving, Adaptability, Team spirit, Enthusiasm
 
 ## Experiences
 
+### The New York Times (T Brand Studio) | London, UK
+
+#### Front End Developer (Permanent)
+
+*August 2019 - Present*
+
 ### Dam Digital | London, UK
 
 #### Lead Front End Developer (Permanent)
 
-*April 2018 - Present*
+*April 2018 - July 2019*
 
 - Lead Front End development for multiple clients' projects
 - Manage and mentor the Front End development team
