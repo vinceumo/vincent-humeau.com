@@ -11,16 +11,16 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/markdownit": "^1.2.3",
+    "@nuxtjs/markdownit": "^1.2.6",
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/style-resources": "^0.1.2",
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.6.1",
+    "cross-env": "^5.2.1",
+    "nuxt": "^2.9.2",
     "nuxt-purgecss": "^0.2.1"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0",
-    "nodemon": "^1.18.11",
-    "sass-loader": "^7.1.0"
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2",
+    "sass-loader": "^7.3.1"
   }
 }
