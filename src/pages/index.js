@@ -20,12 +20,12 @@ const getSection = (type, html)=> {
 const IndexPage = ({ data }) => {
   const { allMarkdownRemark } = data
   const { nodes } = allMarkdownRemark
-
+  console.log(nodes);
   return (
     <Layout>
       <SEO title="Home" />
       <main>
-        {nodes.map(({ html, frontmatter }, index) => {
+        {nodes.sort((a, b) => a.frontmatter.order - b.frontmatter.order).map(({ html, frontmatter }, index) => {
           return (
             <section key={`content_item_${index}`}>
               <h2>{frontmatter.title}</h2>
@@ -48,6 +48,7 @@ export const pageQuery = graphql`
         frontmatter {
           type
           title
+          order
         }
       }
     }

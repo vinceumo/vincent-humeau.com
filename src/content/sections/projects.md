@@ -1,6 +1,7 @@
 ---
 type: projects
 title: Projects
+order: 10
 ---
 
 - 1
