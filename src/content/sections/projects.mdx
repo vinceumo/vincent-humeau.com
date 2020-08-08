@@ -1,0 +1,10 @@
+---
+type: projects
+title: Projects
+order: 10
+---
+
+import data from "./projects.js";
+
+
+<div>{data.projects.map(project => <p>{project.title}</p>)}</div>

@@ -2,26 +2,26 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-const getSectionContent = (type, html) => {
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
-}
+// const getSectionContent = (type, html) => {
+//   return <div dangerouslySetInnerHTML={{ __html: html }} />
+// }
 
 const IndexPage = ({ data }) => {
-  const { allMarkdownRemark, allMdx } = data
-  
-  const nodes = [...allMarkdownRemark.nodes,  ...allMdx.nodes];
+  const { allMdx } = data;
+  const { nodes } = allMdx;
   return (
     <Layout>
       <SEO title="Home" />
       <main>
         {nodes
           .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
-          .map(({ html, frontmatter }, index) => {
+          .map(({ frontmatter, body }, index) => {
             return (
               <section key={`content_item_${index}`}>
                 <h2>{frontmatter.title}</h2>
-                {getSectionContent(frontmatter.type, html)}
+                <MDXRenderer>{body}</MDXRenderer>
               </section>
             )
           })}
@@ -34,24 +34,14 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark {
-      nodes {
-        html
-        frontmatter {
-          type
-          title
-          order
-        }
-      }
-    }
     allMdx {
       nodes {
-        html
         frontmatter {
           order
           title
           type
         }
+        body
       }
     }
   }
