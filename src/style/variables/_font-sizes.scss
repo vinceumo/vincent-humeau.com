@@ -1,0 +1,70 @@
+// ------------------------------
+// Sass Variables
+// ------------------------------
+$font-size-prefix: --fontSize-;
+$font-sizes: (
+  body: (
+    null: 0.875rem,
+    md: 1rem
+  ),
+  bodyLg: (
+    null: 1rem,
+  ),
+  dropcap: (
+    null: 6.25rem,
+  ),
+  blockquote: (
+    null: 1.125rem,
+  ),
+  blockquoteCite: (
+    null: 0.625rem,
+  ),
+  blockquoteMark: (
+    null: 5.875rem
+  ),
+  h1: (
+    null: 2rem,
+  ),
+  h1Subtitle: (
+    null: 1rem,
+    md: 2rem
+  ),
+  h2: (
+    null: 1.5rem,
+  ),
+  h3: (
+    null: 2.5rem,
+  )
+);
+
+// ------------------------------
+// Set font-size function
+// ------------------------------
+
+@function font-size($val, $bp: null, $true-val: false) {
+  @if $use-css-var and not $true-val {
+    @if ($bp != null) {
+      @return var(#{$font-size-prefix}#{$val}-#{$bp});
+    } @else {
+      @return var(#{$font-size-prefix}#{$val});
+    }
+  } @else {
+    @if ($bp != null) {
+      @return map-deep-get($font-sizes, $val, $bp); // map inception, need two deep
+    } @else {
+      @return map-deep-get($font-sizes, $val, null); // Default val
+    }
+  }
+}
+
+@mixin font-size($val) {
+  @each $key, $value in map-get($font-sizes, $val) {
+    @if $key == null {
+      font-size: font-size($val);
+    } @else {
+      @include min(bp($key)) {
+        font-size: font-size($val, $key);
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+﻿/**
+    * @tokens Aspect Ratios 
+    * @presenter Spacing
+    */
+#{$root-default} {
+  @each $key, $val in $aspect-ratios {
+    #{$aspect-ratios-prefix}#{$key}: set-aspect-ratio($key);
+    #{$aspect-ratios-prefix}#{$key}-portrait: set-aspect-ratio($key, portrait);
+  }
+}
+
+/**
+    * @tokens Spacers
+    * @presenter Spacing
+    */
+#{$root-default} {
+  @each $key, $val in $spacers {
+    #{$spacer-prefix}#{$key}: $val;
+  }
+}
+
+/**
+    * @tokens Font Sizes
+    * @presenter FontSize
+    */
+#{$root-default} {
+  @each $key, $val in $font-sizes {
+    @if type-of($val) == "map" {
+      @each $subkey, $subval in $val {
+        @if $subkey {
+          #{$font-size-prefix}#{$key}-#{$subkey}: $subval;
+        } @else {
+          #{$font-size-prefix}#{$key}: $subval;
+        }
+      }
+    }
+  }
+}
+
+/**
+    * @tokens Font Families
+    * @presenter FontFamily
+    */
+#{$root-default} {
+  @each $key, $val in $font-families {
+    #{$font-family-prefix}#{$key}: $val;
+  }
+}
+
+/**
+    * @tokens Container sizes
+    * @presenter Spacing
+    */
+#{$root-default} {
+  @each $key, $val in $container-sizes {
+    #{$container-size-prefix}#{$key}: $val;
+  }
+}
+
+/**
+    * @tokens Colors
+    * @presenter Color
+    */
+#{$root-default} {
+  @each $key, $val in $color-themes {
+    @if type-of($val) == "map" {
+      @each $subkey, $subval in $val {
+        #{$color-prefix}#{$key}-#{$subkey}: $subval;
+      }
+    } @else if type-of($color) == "color" {
+      #{$color-prefix}#{$key}: $color;
+    }
+  }
+}
+
+/**
+    * @tokens Color grays
+    * @presenter Color
+    */
+#{$root-default} {
+  @each $key, $val in $gray-themes {
+    #{$color-gray-prefix}#{$key}: $val;
+  }
+}
+
+/**
+    * @tokens Breakpoints
+    * @presenter Spacing
+    */
+#{$root-default} {
+  @each $key, $val in $breakpoints {
+    #{$bp-prefix}#{$key}: $val;
+  }
+}
+#{$root-default} {
+  @each $val in $z-indexes {
+    #{$z-index-prefix}#{$val}: z($val);
+  }
+}

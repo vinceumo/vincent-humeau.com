@@ -1,0 +1,71 @@
+// ------------------------------
+// Sass Variables
+// ------------------------------
+
+$test: hsl(0, 0%, 11%);
+$color-prefix: --color-;
+$color-gray-prefix: --colorGray-;
+$color-themes: (
+  "brand": (
+    "base": #{'hsl(219, 99%, 53%)'}, //92, 65
+    "dark": #{'hsl(219, 99%, 43%)'},
+    "light": #{'hsl(219, 99%, 56%)'},
+    "transparent": #{'hsla(219, 99%, 53%, 0.2)'},
+    "contrast": #{'hsl(0, 0%, 100%)'}
+  ),
+  "text": (
+    "base": #{'hsl(0, 0%, 100%)'},
+    "dark": #{'hsl(0, 0%, 100%)'},
+    "light": #{'hsl(0, 0%, 100%)'},
+    "transparent": #{'hsla(0, 0%, 100%, 0.2)'},
+    "contrast": #{'hsl(0, 0%, 100%)'}
+  ),
+  "background": (
+    "base": #{'hsl(0, 0%, 11%)'}, //96
+    "dark": #{'hsl(0, 0%, 1%)'},
+    "light": #{'hsl(0, 0%, 21%)'},
+    "transparent": #{'hsla(0, 0%, 11%, 0.2)'},
+    "contrast": #{'hsl(0, 0%, 100%)'}
+  ),
+);
+
+$gray-themes: (
+  0: #{'hsl(0, 0%, 100%)'},
+  10: #{'hsl(210, 17%, 98%)'},
+  20: #{'hsl(210, 16%, 93%)'},
+  30: #{'hsl(210, 14%, 89%)'},
+  40: #{'hsl(210, 14%, 83%)'},
+  50: #{'hsl(210, 11%, 71%)'},
+  60: #{'hsl(208, 7%, 46%)'},
+  70: #{'hsl(210, 9%, 31%)'},
+  80: #{'hsl(210, 10%, 23%)'},
+  90: #{'hsl(210, 11%, 15%)'},
+  100: #{'hsl(0, 0%, 0%)'}
+);
+
+// ------------------------------
+// Set color function
+// ------------------------------
+@function color($val, $color-variant: null, $true-val: false) {
+  @if $use-css-var and not $true-val  {
+    @if ($color-variant != null) {
+      @return var(#{$color-prefix}#{$val}-#{$color-variant});
+    } @else {
+      @return var(#{$color-prefix}#{$val}-base);
+    }
+  } @else {
+    @if ($color-variant != null) {
+      @return map-deep-get($color-themes, $val, $color-variant); // map inception, need two deep
+    } @else {
+      @return map-deep-get($color-themes, $val, base); // Default color
+    }
+  }
+}
+
+@function color-gray($val, $true-val: false) {
+  @if $use-css-var and not $true-val {
+    @return var(#{$color-gray-prefix}#{$val}); // CSS Var
+  } @else {
+    @return map-get($gray-themes, $val); // Disabled CSS Var
+  }
+}

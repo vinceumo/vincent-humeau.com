@@ -1,12 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
+import Section from "../components/section/section"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
-// const getSectionContent = (type, html) => {
-//   return <div dangerouslySetInnerHTML={{ __html: html }} />
-// }
 
 const IndexPage = ({ data }) => {
   const { allMdx } = data;
@@ -19,10 +16,7 @@ const IndexPage = ({ data }) => {
           .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
           .map(({ frontmatter, body }, index) => {
             return (
-              <section key={`content_item_${index}`}>
-                <h2>{frontmatter.title}</h2>
-                <MDXRenderer>{body}</MDXRenderer>
-              </section>
+              <Section key={`content_item_${index}`} content={body} title={frontmatter.title}/>
             )
           })}
       </main>

@@ -1,0 +1,26 @@
+// ------------------------------
+// Sass Variables
+// ------------------------------
+$font-family-prefix: --fontFamily-;
+$font-families: (
+  body: (
+    'IBM Plex Sans', sans-serif
+  ),
+  heading: (
+    'IBM Plex Sans', sans-serif
+  ),
+  highlight: (
+    'IBM Plex Sans', sans-serif
+  )
+);
+
+// ------------------------------
+// Set function
+// ------------------------------
+@function font-family($val, $true-val: false) {
+  @if $use-css-var and not $true-val{
+    @return var(#{$font-family-prefix}#{$val}); //CSS Var
+  } @else {
+    @return map-get($font-families, $val); //Disabled CSS Var
+  }
+}

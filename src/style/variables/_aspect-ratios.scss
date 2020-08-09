@@ -1,0 +1,54 @@
+$aspect-ratios-prefix: --aspectRatio-;
+$aspect-ratios: (
+  "1x1": (
+    width: 1,
+    height: 1
+  ),
+  "16x9": (
+    width: 16,
+    height: 9
+  ),
+  "4x3": (
+    width: 4,
+    height: 3
+  ),
+  "3x2": (
+    width: 3,
+    height: 2
+  ),
+  "golden": (
+    width: 1.6180,
+    height: 1
+  ),
+  "silver":(
+    width: 2.414,
+    height: 1
+  )
+);
+
+// ------------------------------
+// Set aspect-ratio function
+// ------------------------------
+@function set-aspect-ratio($val, $orientation: "landscape"){
+  @if $orientation == "portrait" {
+    @return (map-deep-get($aspect-ratios, $val, width) / map-deep-get($aspect-ratios, $val, height)) * 100%;
+  } @else {
+    @return (map-deep-get($aspect-ratios, $val, height) / map-deep-get($aspect-ratios, $val, width)) * 100%;
+  }
+}
+
+@function aspect-ratio($val, $orientation: "landscape",  $true-val:false) {
+  @if $use-css-var and not $true-val {
+    @if $orientation == "portrait" {
+      @return var(#{$aspect-ratios-prefix}#{$val}-portrait);
+    } @else {
+      @return var(#{$aspect-ratios-prefix}#{$val});
+    }
+  } @else {
+    @if $orientation == "portrait" {
+      @return set-aspect-ratio($val, portrait);
+    } @else {
+      @return set-aspect-ratio($val);
+    }
+  }
+}

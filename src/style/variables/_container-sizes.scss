@@ -1,0 +1,23 @@
+// ------------------------------
+// Sass Variables
+// ------------------------------
+$container-size-prefix: --containerSize-;
+$container-sizes: (
+  xs: map-get($breakpoints, xs),
+  sm: map-get($breakpoints, sm) - 30px,
+  md: map-get($breakpoints, md) - 30px,
+  lg: map-get($breakpoints, lg) - 30px,
+  xl: map-get($breakpoints, xl) - 30px,
+  xxl: 1605px
+);
+
+// ------------------------------
+// Set container function
+// ------------------------------
+@function container($val, $true-val:false) {
+  @if $use-css-var and not $true-val {
+    @return var(#{$container-size-prefix}#{$val}); 
+  } @else {
+    @return map-get($container-sizes, $val);
+  }
+}
