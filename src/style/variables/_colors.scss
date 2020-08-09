@@ -2,7 +2,7 @@
 // Sass Variables
 // ------------------------------
 
-$test: hsl(0, 0%, 11%);
+$test: #212121;
 $color-prefix: --color-;
 $color-gray-prefix: --colorGray-;
 $color-themes: (
@@ -22,8 +22,8 @@ $color-themes: (
   ),
   "background": (
     "base": #{'hsl(0, 0%, 11%)'}, //96
-    "dark": #{'hsl(0, 0%, 1%)'},
-    "light": #{'hsl(0, 0%, 21%)'},
+    "dark": #{'hsl(0, 0%, 7%)'},
+    "light": #{'hsl(0, 0%, 16%)'},
     "transparent": #{'hsla(0, 0%, 11%, 0.2)'},
     "contrast": #{'hsl(0, 0%, 100%)'}
   ),

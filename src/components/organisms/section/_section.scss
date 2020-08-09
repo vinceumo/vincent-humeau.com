@@ -1,0 +1,52 @@
+@import "../../../style/global-style-resources";
+
+section {
+  background-color: color(background);
+  color: color(text);
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  align-items: center;
+
+  &:nth-child(odd) {
+    background: color(background, dark);
+  }
+
+  .section-content {
+    max-width: 600px;
+    justify-self: center;
+  }
+
+  .clip-content-scroll-container {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+
+    .clip-content-scroll-content {
+      clip: rect(0, auto, auto, 0);
+      -webkit-clip: rect(0, auto, auto, 0);
+      -moz-clip: rect(0, auto, auto, 0);
+      clip: auto;
+      -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      .clip-content-scroll-content-inner {
+        padding-left: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
