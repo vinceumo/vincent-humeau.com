@@ -1,6 +1,25 @@
 @import "designToken";
 
-@import "atoms/typography/global";
-@import "atoms/medias";
+body {
+    background-color: color(background);
+    @import "atoms/typography/global";
+    @import "atoms/medias";
 
-@import "molecules/about-section";
+    @import "molecules/about-section";
+
+
+    &::after {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        // background-image: url(https://media.giphy.com/media/Rslb0YJelF4e4/giphy.gif);
+        background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2Fvxcuu6bLZDdm0%2F200.gif&f=1&nofb=1);
+        // background-size: contain;
+        opacity: .05;
+        z-index: 10;
+        pointer-events: none;
+    }
+}

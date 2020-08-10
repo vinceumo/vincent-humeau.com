@@ -1,5 +1,6 @@
-body {
+& {
     font-family: font-family(body);
+    color: color(text);
 }
 
 a {
@@ -9,4 +10,14 @@ a {
 p {
     margin-top: 0;
     margin-bottom: spacer(3);
+}
+
+@for $i from 1 through 3 {
+    h#{$i},
+    .is-h#{$i} {
+        font-family: font-family(heading);
+        @include font-size(h#{$i});
+        line-height: 0.95;
+        margin: 0;
+    }
 }

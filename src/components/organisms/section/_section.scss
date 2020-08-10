@@ -6,9 +6,14 @@ section {
   display: grid;
   grid-template-columns: 400px 1fr;
   align-items: center;
+  border-bottom: 2px solid color(background, light);
 
-  &:nth-child(odd) {
-    background: color(background, dark);
+  // &:nth-child(odd) {
+  //   background: color(background, dark);
+  // }
+
+  &:last-child {
+    border-bottom: none;
   }
 
   .section-content {
@@ -43,11 +48,11 @@ section {
         align-items: center;
         justify-content: flex-start;
         position: fixed;
-        right: 0;
+        // right: 0;
         bottom: 0;
         z-index: 1;
         top: 0;
-        left: 0;
+        // left: 0;
       }
     }
   }

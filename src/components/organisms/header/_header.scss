@@ -1,0 +1,47 @@
+@import "../../../style/global-style-resources";
+
+header {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    color: color(text);
+    border-right: 2px solid color(background, light);
+    padding: spacer(2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo-container {
+        text-align: center;
+        color: color(text);
+        text-decoration: none;
+        display: block;
+
+        .logo {
+            max-width: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .social {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            writing-mode: vertical-lr;
+            // text-orientation: upright;
+            margin: spacer(2) 0;
+            transform: rotate(180deg);
+            font-size: font-size(h1);
+            
+
+            a {
+                text-decoration: none;
+                // letter-spacing: -0.20em;
+
+            }
+        }
+    }
+}

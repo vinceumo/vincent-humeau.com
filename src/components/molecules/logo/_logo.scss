@@ -1,0 +1,10 @@
+@import "../../../style/global-style-resources";
+
+.logo {
+    .logo-bg {
+        fill: color(text);
+    }
+    .logo-lines {
+        fill: color(background, dark);
+    }
+}
