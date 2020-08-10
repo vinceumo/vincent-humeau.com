@@ -4,30 +4,10 @@
 $font-size-prefix: --fontSize-;
 $font-sizes: (
   body: (
-    null: 0.875rem,
-    md: 1rem
-  ),
-  bodyLg: (
-    null: 1rem,
-  ),
-  dropcap: (
-    null: 6.25rem,
-  ),
-  blockquote: (
-    null: 1.125rem,
-  ),
-  blockquoteCite: (
-    null: 0.625rem,
-  ),
-  blockquoteMark: (
-    null: 5.875rem
+    null: 1.1rem,
   ),
   h1: (
     null: 2rem,
-  ),
-  h1Subtitle: (
-    null: 1rem,
-    md: 2rem
   ),
   h2: (
     null: 1.5rem,

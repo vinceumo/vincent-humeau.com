@@ -7,25 +7,25 @@ $color-prefix: --color-;
 $color-gray-prefix: --colorGray-;
 $color-themes: (
   "brand": (
-    "base": #{'hsl(219, 99%, 53%)'}, //92, 65
-    "dark": #{'hsl(219, 99%, 43%)'},
-    "light": #{'hsl(219, 99%, 56%)'},
-    "transparent": #{'hsla(219, 99%, 53%, 0.2)'},
+    "base": #{'hsl(206, 82%, 50%)'}, //92, 65
+    "dark": #{'hsl(206, 82%, 40%)'},
+    "light": #{'hsl(206, 82%, 60%)'},
+    "transparent": #{'hsla(206, 82%, 50%, 0.2)'},
     "contrast": #{'hsl(0, 0%, 100%)'}
   ),
   "text": (
-    "base": #{'hsl(0, 0%, 100%)'},
-    "dark": #{'hsl(0, 0%, 100%)'},
+    "base": #{'hsl(0, 0%, 90%)'},
+    "dark": #{'hsl(0, 0%, 80%)'},
     "light": #{'hsl(0, 0%, 100%)'},
-    "transparent": #{'hsla(0, 0%, 100%, 0.2)'},
+    "transparent": #{'hsla(0, 0%, 90%, 0.2)'},
     "contrast": #{'hsl(0, 0%, 100%)'}
   ),
   "background": (
     "base": #{'hsl(0, 0%, 11%)'}, //96
-    "dark": #{'hsl(0, 0%, 7%)'},
-    "light": #{'hsl(0, 0%, 16%)'},
+    "dark": #{'hsl(0, 0%, 1%)'},
+    "light": #{'hsl(0, 0%, 21%)'},
     "transparent": #{'hsla(0, 0%, 11%, 0.2)'},
-    "contrast": #{'hsl(0, 0%, 100%)'}
+    "contrast": #{'hsl(0, 0%, 90%)'}
   ),
 );
 

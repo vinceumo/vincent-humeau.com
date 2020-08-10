@@ -2,12 +2,12 @@
     * @tokens Aspect Ratios 
     * @presenter Spacing
     */
-#{$root-default} {
-  @each $key, $val in $aspect-ratios {
-    #{$aspect-ratios-prefix}#{$key}: set-aspect-ratio($key);
-    #{$aspect-ratios-prefix}#{$key}-portrait: set-aspect-ratio($key, portrait);
-  }
-}
+// #{$root-default} {
+//   @each $key, $val in $aspect-ratios {
+//     #{$aspect-ratios-prefix}#{$key}: set-aspect-ratio($key);
+//     #{$aspect-ratios-prefix}#{$key}-portrait: set-aspect-ratio($key, portrait);
+//   }
+// }
 
 /**
     * @tokens Spacers
@@ -51,11 +51,11 @@
     * @tokens Container sizes
     * @presenter Spacing
     */
-#{$root-default} {
-  @each $key, $val in $container-sizes {
-    #{$container-size-prefix}#{$key}: $val;
-  }
-}
+// #{$root-default} {
+//   @each $key, $val in $container-sizes {
+//     #{$container-size-prefix}#{$key}: $val;
+//   }
+// }
 
 /**
     * @tokens Colors
@@ -77,23 +77,23 @@
     * @tokens Color grays
     * @presenter Color
     */
-#{$root-default} {
-  @each $key, $val in $gray-themes {
-    #{$color-gray-prefix}#{$key}: $val;
-  }
-}
+// #{$root-default} {
+//   @each $key, $val in $gray-themes {
+//     #{$color-gray-prefix}#{$key}: $val;
+//   }
+// }
 
 /**
     * @tokens Breakpoints
     * @presenter Spacing
     */
-#{$root-default} {
-  @each $key, $val in $breakpoints {
-    #{$bp-prefix}#{$key}: $val;
-  }
-}
-#{$root-default} {
-  @each $val in $z-indexes {
-    #{$z-index-prefix}#{$val}: z($val);
-  }
-}
+// #{$root-default} {
+//   @each $key, $val in $breakpoints {
+//     #{$bp-prefix}#{$key}: $val;
+//   }
+// }
+// #{$root-default} {
+//   @each $val in $z-indexes {
+//     #{$z-index-prefix}#{$val}: z($val);
+//   }
+// }
