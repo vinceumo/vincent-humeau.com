@@ -1,0 +1,14 @@
+.parallax-img {
+    overflow: hidden;
+    will-change: transform;
+    width: 200px;
+
+    .img {
+        --ImgOverflow: 90px;
+        height: calc(100% + (2 * var(--ImgOverflow)));
+        top: calc( -1 * var(--ImgOverflow));
+        width: 100%;
+        position: absolute;
+        will-change: transform;
+    }
+}
