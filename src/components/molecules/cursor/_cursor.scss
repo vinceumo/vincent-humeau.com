@@ -1,0 +1,30 @@
+@import "../../../style/global-style-resources";
+
+// .cursor-container  {
+//     width: 100vw;
+//     height: 100vh;
+//     pointer-events: none;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+// }
+.cursor {
+    display: none;
+}
+
+@media (any-pointer: fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+		opacity: 0;
+    }
+    
+	.cursor__inner {
+		fill: color(brand, transparent);
+		stroke: color(brand);
+		stroke-width: 1px;
+	}
+}

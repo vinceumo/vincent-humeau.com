@@ -14,7 +14,7 @@ const Header = ({ siteTitle }) => {
         <h1>{siteTitle}</h1>
       </Link>
       <ul className="social">
-        {social.map(el => <li><a href={el.url}>{el.name}</a></li>)}
+        {social.map(el => <li><a href={el.url} key={el.name}>{el.name}</a></li>)}
       </ul>
       <div className="controls"></div>
     </header>

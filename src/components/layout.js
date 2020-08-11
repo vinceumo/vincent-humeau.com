@@ -9,34 +9,37 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./organisms/header/header"
-import "normalize.css";
+import Cursor from "./molecules/cursor/cursor"
+import "normalize.css"
 import "./_layout.scss"
 import "../style/style.scss"
-
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title,
+          title
         }
       }
     }
   `)
 
   return (
-    <div className="layout">
-      <Header siteTitle={data.site.siteMetadata.title}/>
-      <div>
-        <main>{children}</main>
-        {/* <footer>
+    <>
+      <div className="layout">
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <div>
+          <main>{children}</main>
+          {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer> */}
+        </div>
       </div>
-    </div>
+      <Cursor />
+    </>
   )
 }
 
