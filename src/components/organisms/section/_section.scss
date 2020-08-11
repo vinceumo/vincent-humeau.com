@@ -3,57 +3,71 @@
 section {
   background-color: color(background);
   color: color(text);
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  align-items: center;
   border-bottom: 2px solid color(background, light);
+  margin: spacer(6) 0;
+  padding: 0 spacer(3) spacer(6);
 
-  // &:nth-child(odd) {
-  //   background: color(background, dark);
-  // }
+  @include min(bp(sm)) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    align-items: center;
+  }
 
   &:last-child {
     border-bottom: none;
   }
 
   .section-content {
-    max-width: 600px;
-    justify-self: center;
-    padding-top: spacer(7);
-    padding-bottom: spacer(7);
-  }
-
-  .clip-content-scroll-container {
-    position: relative;
-    min-height: 100vh;
-    height: 100%;
-
-    .clip-content-scroll-content {
-      clip: rect(0, auto, auto, 0);
-      -webkit-clip: rect(0, auto, auto, 0);
-      -moz-clip: rect(0, auto, auto, 0);
-      clip: auto;
-      -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: 100%;
-
-      .clip-content-scroll-content-inner {
-        padding-left: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        position: fixed;
-        // right: 0;
-        bottom: 0;
-        z-index: 1;
-        top: 0;
-        // left: 0;
-      }
+    @include min(bp(sm)) {
+      max-width: 600px;
+      justify-self: center;
+      padding-top: spacer(7);
+      padding-bottom: spacer(7);
     }
   }
+
+  .section-heading {
+    margin: spacer(6) 0;
+
+     @include min(bp(sm)) {
+        margin: 0;
+     }
+  }
+
+  @include min(bp(sm)) {
+      .clip-content-scroll-container {
+        position: relative;
+        min-height: 100vh;
+        height: 100%;
+
+        .clip-content-scroll-content {
+          clip: rect(0, auto, auto, 0);
+          -webkit-clip: rect(0, auto, auto, 0);
+          -moz-clip: rect(0, auto, auto, 0);
+          clip: auto;
+          -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          width: 100%;
+
+          .clip-content-scroll-content-inner {
+            padding-left: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: fixed;
+            // right: 0;
+            bottom: 0;
+            z-index: 1;
+            top: 0;
+            // left: 0;
+          }
+        }
+      }
+    }
 }

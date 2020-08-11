@@ -35,12 +35,20 @@ $blend-color: (
             animation-delay: $delay-anim;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
+            
+            @media (prefers-reduced-motion: reduce) {
+                animation: unset;
+            }
         }
         @for $i from 2 through 5 {
             &:nth-child(#{$i}) {
                 background-color: map-get($blend-color, $i);
                 background-blend-mode: map-get($blend-mode, $i);
                 animation-name: glitch-anim#{-$i};
+
+                @media (prefers-reduced-motion: reduce) {
+                    animation: unset;
+                }
             }
         }
     }

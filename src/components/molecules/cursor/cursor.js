@@ -6,12 +6,17 @@ const Cursor = () => {
   let cursorRef = useRef(null)
 
   useEffect(() => {
-    const cursorEl = new CursorEvent(cursorRef.current);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
+      .matches
+    if (reducedMotion) {
+      return
+    }
+    const cursorEl = new CursorEvent(cursorRef.current)
 
-    [...document.querySelectorAll('a')].forEach(el => {
-        el.addEventListener('mouseenter', () => cursorEl.emit('enter'));
-        el.addEventListener('mouseleave', () => cursorEl.emit('leave'));
-    });
+    ;[...document.querySelectorAll("a")].forEach(el => {
+      el.addEventListener("mouseenter", () => cursorEl.emit("enter"))
+      el.addEventListener("mouseleave", () => cursorEl.emit("leave"))
+    })
   }, [])
 
   return (

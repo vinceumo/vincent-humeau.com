@@ -1,17 +1,24 @@
 @import "../../../style/global-style-resources";
 
 header {
-    height: 100vh;
-    max-height: 100vh;
     position: sticky;
     top: 0;
+    background-color: color(background);
     color: color(text);
-    border-right: 2px solid color(background, light);
-    padding: spacer(2);
+    border-bottom: 2px solid color(background, light);
+    padding: spacer(1);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    
+    @include min(bp(sm)) { 
+        height: 100vh;
+        max-height: 100vh;
+        border-right: 2px solid color(background, light);
+        border-bottom: none;
+        padding: spacer(2);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     .logo-container {
         text-align: center;
@@ -29,19 +36,27 @@ header {
     .social {
         list-style-type: none;
         padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include min(bp(sm)) {
+            flex-direction: column;
+        }
 
         li {
-            writing-mode: vertical-lr;
-            // text-orientation: upright;
-            margin: spacer(2) 0;
-            transform: rotate(180deg);
             font-size: font-size(h1);
+            margin: 0 spacer(1);
             
+            @include min(bp(sm)) {
+                writing-mode: vertical-lr;
+                // text-orientation: upright;
+                margin: spacer(2) 0;
+                transform: rotate(180deg);
+             }
 
             a {
                 text-decoration: none;
                 // letter-spacing: -0.20em;
-
             }
         }
     }

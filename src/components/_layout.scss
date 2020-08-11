@@ -1,4 +1,8 @@
+@import "../style/global-style-resources";
+
 .layout {
-    display: grid;
-    grid-template-columns: 100px 1fr;
+    @include min(bp(sm)) {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+    }
 }

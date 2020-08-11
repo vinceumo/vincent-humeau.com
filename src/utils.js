@@ -3,7 +3,7 @@ const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c
 
 const lerp = (a, b, n) => (1 - n) * a + n * b
 
-const calcWinSize = () => {
+const calcWindowSize = () => {
   return { width: window.innerWidth, height: window.innerHeight }
 }
 
@@ -12,7 +12,6 @@ const getMousePos = e => {
   let posy = 0
   if (!e) e = window.event
   if (e.pageX || e.pageY) {
-    console.log(e.pageY)
     posx = e.pageX
     posy = e.pageY
   } else if (e.clientX || e.clientY) {
@@ -32,4 +31,4 @@ const getMousePos = e => {
 const getPageYScroll = () =>
   window.pageYOffset || document.documentElement.scrollTop
 
-export { map, lerp, calcWinSize, getMousePos, getPageYScroll }
+export { map, lerp, calcWindowSize, getMousePos, getPageYScroll }

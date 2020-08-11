@@ -1,7 +1,11 @@
 .about-section {
-    display: flex;
+    @include min(bp(sm)) {
+        display: flex;
+    }
 
     > .about-section-copy {
-        padding-right: spacer(3);
+        @include min(bp(sm)) {
+            padding-right: spacer(3);
+        }
     }
 }

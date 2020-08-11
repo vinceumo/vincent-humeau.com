@@ -1,15 +1,9 @@
 import { gsap } from "gsap"
-import { map, lerp, calcWinSize, getMousePos, getPageYScroll } from "../../../utils"
+import { lerp, getMousePos, getPageYScroll } from "../../../utils"
 import { EventEmitter } from "events"
 
-// Calculate the viewport size
-let winsize = calcWinSize()
+
 let docYScroll = getPageYScroll();
-
-window.addEventListener("resize", () => {
-  winsize = calcWinSize()
-})
-
 window.addEventListener("scroll", () => {
   docYScroll = getPageYScroll()
 })
