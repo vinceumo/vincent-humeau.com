@@ -1,15 +1,17 @@
 @import "../../../style/global-style-resources";
 
 header {
-    position: sticky;
-    top: 0;
+    
     background-color: color(background);
     color: color(text);
     border-bottom: 2px solid color(background, light);
     padding: spacer(1);
     display: flex;
+    z-index: 1;
     
     @include min(bp(sm)) { 
+        position: sticky;
+        top: 0;
         height: 100vh;
         max-height: 100vh;
         border-right: 2px solid color(background, light);
@@ -38,6 +40,9 @@ header {
         padding: 0;
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
 
         @include min(bp(sm)) {
             flex-direction: column;

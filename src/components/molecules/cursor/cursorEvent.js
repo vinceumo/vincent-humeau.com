@@ -11,7 +11,6 @@ window.addEventListener("scroll", () => {
 // Track the mouse position
 let mouse = { x: 0, y: 0 }
 window.addEventListener("mousemove", ev => (mouse = getMousePos(ev)))
-console.log(mouse);
 
 export default class CursorEvent extends EventEmitter {
   constructor(el) {

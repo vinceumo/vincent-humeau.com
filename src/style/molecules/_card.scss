@@ -1,0 +1,12 @@
+.card {
+    background-color: color(background, light);
+    padding: spacer(3);
+
+    > * {
+        margin: 0;
+
+        & + * {
+            margin-top: spacer(2);
+        }
+    }
+}

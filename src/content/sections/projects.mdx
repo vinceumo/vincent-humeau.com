@@ -4,20 +4,22 @@ title: 💻 Projects
 order: 10
 ---
 
-import data from "./projects.js";
+import data from "./projectsData.js";
 
-
-<div>{data.projects.map(project => {
-    return <div key={project.title}>
-    <p>{project.year}</p>
-    <h3>{project.title}</h3>
-    <p>{project.role}</p>
-    {project.description && <p>{project.description}</p>}
-    <ul>
-        {project.technology.map(t => <li key={t}>{t}</li>)}
-    </ul>
-    {project.links && <ul>
-        {project.links.map(l => <li key={l.name}><a href={l.url}>{l.name}</a></li>)}
-    </ul>}
-    </div>
+<div className="project-section">{["commercial", "personal"].map(sub => <div key={sub}>
+<h3>{sub.replace(/^\w/, c => c.toUpperCase())}</h3>
+<div className="project-cards">{data.projects.filter(project => project.type === sub).map(project => {
+return <div key={project.title} className="card">
+<h4>{project.title}</h4>
+<p className="project-role"><i>{project.role}</i></p>
+{project.description && <p className="project-description">{project.description}</p>}
+<ul class="project-tags">
+    {project.technology.map(t => <li key={t}>{t}</li>)}
+</ul>
+{project.links && <ul className="project-links">
+    {project.links.map(l => <li key={l.name}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.name}</a></li>)}
+</ul>}
+</div>
 })}</div>
+</div>)}</div>
+

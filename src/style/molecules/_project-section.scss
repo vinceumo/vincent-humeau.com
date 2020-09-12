@@ -1,0 +1,51 @@
+.project-section {
+    h3 {
+        margin: spacer(7) 0 spacer(4);
+    }
+}
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: spacer(3);
+    width: 100%;
+
+    .project-links, 
+    .project-tags {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .project-tags {
+         display: flex;
+        flex-wrap: wrap;
+        gap: spacer(1);
+
+        > li {
+            background-color: color(brand, dark);
+            padding: spacer(1);
+            @include font-size(bodySm);
+        }
+    }
+
+    .project-role {
+        @include font-size(bodySm);
+    }
+
+    .project-links {
+        li {
+            display: inline;
+            
+            a {
+                display: inline;
+            }
+        }
+        > li + li {
+            &::before {
+                content: "/";
+                display: inline;
+                padding-left: spacer(1);
+                padding-right: spacer(1);
+            }
+        }
+    }
+}

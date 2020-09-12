@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `vincent-humeau`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `hsl(0, 0%, 11%)`,
-        theme_color: `hsl(206, 82%, 50%)`,
+        theme_color: `hsl(0, 0%, 11%)`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

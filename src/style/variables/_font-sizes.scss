@@ -4,7 +4,10 @@
 $font-size-prefix: --fontSize-;
 $font-sizes: (
   body: (
-    null: 1.1rem,
+    null: 1rem,
+  ),
+  bodySm: (
+    null: 0.75rem,
   ),
   h1: (
     null: 0.75rem,
@@ -13,7 +16,10 @@ $font-sizes: (
     null: 1.5rem,
   ),
   h3: (
-    null: 2.5rem,
+    null: 1.25rem,
+  ),
+  h4: (
+    null: 1.15rem,
   )
 );
 

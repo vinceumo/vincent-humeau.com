@@ -8,12 +8,12 @@ const social = [
     url: "https://www.linkedin.com/in/vincent-humeau/",
   },
   {
-    name: "codepen",
-    url: "https://codepen.io/vinceumo",
-  },
-  {
     name: "dev.to",
     url: "https://dev.to/vinceumo",
+  },
+  {
+    name: "blog",
+    url: "https://vinceumo.github.io/devNotes/",
   },
 ];
 

@@ -7,11 +7,13 @@ section {
   margin: spacer(6) 0;
   padding: 0 spacer(3) spacer(6);
 
-  @include min(bp(sm)) {
-    padding: 0;
+  @include min(bp(md)) {
+    padding: 0 spacer(2);
+    margin: 0;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 250px 1fr;
     align-items: center;
+    grid-gap: spacer(4);
   }
 
   &:last-child {
@@ -19,23 +21,25 @@ section {
   }
 
   .section-content {
-    @include min(bp(sm)) {
-      max-width: 600px;
+    @include min(bp(md)) {
+      max-width: 700px;
+      width: 100%;
       justify-self: center;
       padding-top: spacer(7);
       padding-bottom: spacer(7);
+      // justify-self: flex-start;
     }
   }
 
   .section-heading {
     margin: spacer(6) 0;
 
-     @include min(bp(sm)) {
+     @include min(bp(md)) {
         margin: 0;
      }
   }
 
-  @include min(bp(sm)) {
+  @include min(bp(md)) {
       .clip-content-scroll-container {
         position: relative;
         min-height: 100vh;
