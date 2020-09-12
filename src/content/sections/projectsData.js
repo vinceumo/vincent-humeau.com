@@ -5,8 +5,16 @@ const data = {
       type: "commercial",
       year: "2019 - 2020",
       role: "Lead Developer (The New York Times)",
-      technology: ["Storybook", "Lottie (Bodymovin)", "GSAP", "SCSS", "React JS", "Webpack"],
-      description: "Library of web components and animations patterns use to build paid posts. The pattern library is based on the atomic design methodology."
+      technology: [
+        "Storybook",
+        "Lottie (Bodymovin)",
+        "GSAP",
+        "SCSS",
+        "React JS",
+        "Webpack",
+      ],
+      description:
+        "Library of web components and animations patterns use to build paid posts. The pattern library is based on the atomic design methodology.",
     },
     {
       title: "Webflow to interactive parser | T Brand Studio",
@@ -14,39 +22,55 @@ const data = {
       year: "2019 - 2020",
       role: "Lead Developer (The New York Times)",
       technology: ["Node JS"],
-      description: "Scraper to extract the content of webflow projects so it can be used in The New York Times preparatory CMS."
+      description:
+        "Scraper to extract the content of webflow projects so it can be used in The New York Times preparatory CMS.",
     },
     {
       title: "Paid Posts | T Brand Studio",
       type: "commercial",
       year: "2020",
       role: "Lead Developer (The New York Times)",
-      technology: ["Lottie (Bodymovin)", "GSAP", "SCSS", "React JS", "vanilla JS", "Pug", "Parcel"],
-      description: "Development of native advertising content (Micro sites) living within The New York Times.",
+      technology: [
+        "Lottie (Bodymovin)",
+        "GSAP",
+        "SCSS",
+        "React JS",
+        "vanilla JS",
+        "Pug",
+        "Parcel",
+      ],
+      description:
+        "Development of native advertising content (Micro sites) living within The New York Times.",
       links: [
         {
           name: "IBM",
-          url: "https://www.nytimes.com/paidpost/ibm-cloud-and-ai/the-tools-of-business-transformation.html",
+          url:
+            "https://www.nytimes.com/paidpost/ibm-cloud-and-ai/the-tools-of-business-transformation.html",
         },
         {
           name: "BNY Mellon",
-          url: "https://www.nytimes.com/paidpost/bny-mellon-wealth-management/growing-a-legacy.html",
+          url:
+            "https://www.nytimes.com/paidpost/bny-mellon-wealth-management/growing-a-legacy.html",
         },
         {
           name: "La Prairie",
-          url: "https://www.nytimes.com/paidpost/la-prairie/golden-beads-from-the-swiss-alps.html",
+          url:
+            "https://www.nytimes.com/paidpost/la-prairie/golden-beads-from-the-swiss-alps.html",
         },
         {
           name: "Audemars Piguet",
-          url: "https://www.nytimes.com/paidpost/audemars-piguet/step-inside-a-spiraling-watch-museum-in-the-swiss-jura-mountains.html",
+          url:
+            "https://www.nytimes.com/paidpost/audemars-piguet/step-inside-a-spiraling-watch-museum-in-the-swiss-jura-mountains.html",
         },
         {
           name: "Burberry",
-          url: "https://www.nytimes.com/paidpost/burberry/love-the-spoken-word.html",
+          url:
+            "https://www.nytimes.com/paidpost/burberry/love-the-spoken-word.html",
         },
         {
           name: "Singapore Airlines",
-          url: "https://www.nytimes.com/paidpost/singapore-airlines/a-contemporary-portrait-of-a-singapore-icon.html",
+          url:
+            "https://www.nytimes.com/paidpost/singapore-airlines/a-contemporary-portrait-of-a-singapore-icon.html",
         },
       ],
     },
@@ -56,12 +80,13 @@ const data = {
       year: "2020",
       role: "Ownner",
       technology: ["Canvas API", "vanilla JS"],
-      description: "Playground for me to play and experiment with generative/creative coding.",
+      description:
+        "Playground for me to play and experiment with generative/creative coding.",
       links: [
         {
           name: "View Project",
           url: "https://www.instagram.com/generative_coding/",
-        }
+        },
       ],
     },
     {
@@ -120,7 +145,8 @@ const data = {
       type: "personal",
       year: "2020",
       role: "Owner",
-      technology: ["Gatsby", "React JS", "SCSS", "MDX"],},
+      technology: ["Gatsby", "React JS", "SCSS", "MDX"],
+    },
     {
       title: "A11Y - Color blindness empathy test",
       type: "personal",
@@ -225,4 +251,4 @@ const data = {
   ],
 }
 
-export default data;
+export default data

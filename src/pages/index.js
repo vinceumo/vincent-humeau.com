@@ -4,10 +4,9 @@ import Section from "../components/organisms/section/section"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 
-
 const IndexPage = ({ data }) => {
-  const { allMdx } = data;
-  const { nodes } = allMdx;
+  const { allMdx } = data
+  const { nodes } = allMdx
   return (
     <Layout>
       <SEO title="Home" />
@@ -16,7 +15,11 @@ const IndexPage = ({ data }) => {
           .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
           .map(({ frontmatter, body }, index) => {
             return (
-              <Section key={`content_item_${index}`} content={body} title={frontmatter.title}/>
+              <Section
+                key={`content_item_${index}`}
+                content={body}
+                title={frontmatter.title}
+              />
             )
           })}
       </main>

@@ -15,6 +15,6 @@ const social = [
     name: "blog",
     url: "https://vinceumo.github.io/devNotes/",
   },
-];
+]
 
-export default social;
+export default social

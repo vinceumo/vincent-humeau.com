@@ -2,8 +2,7 @@ import { gsap } from "gsap"
 import { lerp, getMousePos, getPageYScroll } from "../../../utils"
 import { EventEmitter } from "events"
 
-
-let docYScroll = getPageYScroll();
+let docYScroll = getPageYScroll()
 window.addEventListener("scroll", () => {
   docYScroll = getPageYScroll()
 })
@@ -15,7 +14,7 @@ window.addEventListener("mousemove", ev => (mouse = getMousePos(ev)))
 export default class CursorEvent extends EventEmitter {
   constructor(el) {
     super()
-    
+
     this.DOM = { el: el }
     this.DOM.el.style.opacity = 0
     this.DOM.circleInner = this.DOM.el.querySelector(".cursor__inner")
@@ -56,7 +55,8 @@ export default class CursorEvent extends EventEmitter {
   }
   render() {
     this.renderedStyles["tx"].current = mouse.x - this.bounds.width / 2
-    this.renderedStyles["ty"].current = mouse.y - this.bounds.height / 2 - docYScroll
+    this.renderedStyles["ty"].current =
+      mouse.y - this.bounds.height / 2 - docYScroll
 
     for (const key in this.renderedStyles) {
       this.renderedStyles[key].previous = lerp(
