@@ -2,18 +2,18 @@ import { gsap } from "gsap"
 import { lerp, getMousePos, getPageYScroll } from "../../../utils"
 import { EventEmitter } from "events"
 
-let docYScroll = getPageYScroll()
-window.addEventListener("scroll", () => {
-  docYScroll = getPageYScroll()
-})
-
-// Track the mouse position
-let mouse = { x: 0, y: 0 }
-window.addEventListener("mousemove", ev => (mouse = getMousePos(ev)))
-
 export default class CursorEvent extends EventEmitter {
   constructor(el) {
     super()
+
+    this.docYScroll = getPageYScroll()
+    window.addEventListener("scroll", () => {
+      this.docYScroll = getPageYScroll()
+    })
+
+    // Track the mouse position
+    this.mouse = { x: 0, y: 0 }
+    window.addEventListener("mousemove", ev => (this.mouse = getMousePos(ev)))
 
     this.DOM = { el: el }
     this.DOM.el.style.opacity = 0
@@ -40,9 +40,9 @@ export default class CursorEvent extends EventEmitter {
 
     this.onMouseMoveEv = () => {
       this.renderedStyles.tx.previous = this.renderedStyles.tx.current =
-        mouse.x - this.bounds.width / 2
+        this.mouse.x - this.bounds.width / 2
       this.renderedStyles.ty.previous = this.renderedStyles.ty.previous =
-        mouse.y - this.bounds.height / 2 - docYScroll
+        this.mouse.y - this.bounds.height / 2 - this.docYScroll
       gsap.to(this.DOM.el, {
         duration: 0.9,
         ease: "Power3.easeOut",
@@ -54,9 +54,9 @@ export default class CursorEvent extends EventEmitter {
     window.addEventListener("mousemove", this.onMouseMoveEv)
   }
   render() {
-    this.renderedStyles["tx"].current = mouse.x - this.bounds.width / 2
+    this.renderedStyles["tx"].current = this.mouse.x - this.bounds.width / 2
     this.renderedStyles["ty"].current =
-      mouse.y - this.bounds.height / 2 - docYScroll
+      this.mouse.y - this.bounds.height / 2 - this.docYScroll
 
     for (const key in this.renderedStyles) {
       this.renderedStyles[key].previous = lerp(

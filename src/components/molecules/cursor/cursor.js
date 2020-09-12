@@ -12,7 +12,6 @@ const Cursor = () => {
       return
     }
     const cursorEl = new CursorEvent(cursorRef.current)
-
     ;[...document.querySelectorAll("a")].forEach(el => {
       el.addEventListener("mouseenter", () => cursorEl.emit("enter"))
       el.addEventListener("mouseleave", () => cursorEl.emit("leave"))
