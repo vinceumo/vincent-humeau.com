@@ -35,8 +35,10 @@
         li {
             display: inline;
             
+            
             a {
-                display: inline;
+                display: inline-block;
+                padding: spacer(1) 0;
             }
         }
         > li + li {

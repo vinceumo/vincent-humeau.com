@@ -20,11 +20,22 @@ module.exports = {
       options: {
         name: `vincent-humeau`,
         short_name: `starter`,
-        start_url: `/`,
+        start_url: `https://www.vincent-humeau.com/`,
         background_color: `hsl(0, 0%, 11%)`,
         theme_color: `hsl(0, 0%, 11%)`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`,
+            variants: [`400`, `700`],
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
