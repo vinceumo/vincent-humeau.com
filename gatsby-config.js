@@ -20,7 +20,7 @@ module.exports = {
       options: {
         name: `vincent-humeau`,
         short_name: `starter`,
-        start_url: `https://www.vincent-humeau.com/`,
+        start_url: `/`,
         background_color: `hsl(0, 0%, 11%)`,
         theme_color: `hsl(0, 0%, 11%)`,
         display: `minimal-ui`,
